@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dawns Claw — Elite Aviation Management | Charleston, SC</title>
+<meta name="description" content="Dawns Claw is Charleston's premier white-glove aviation concierge, A&P/IA labor network, and autonomous aerospace consultancy — operating adjacent to Boeing and CHS International." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/dc.css" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FDFBF7',
+        gold: '#D4AF37',
+        forest: '#1B4D3E',
+        ink: '#0A0A0A',
+        rose: '#E8B4B8'
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- ============ STATUS BAR ============ -->
+<div class="bg-ink text-cream/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-8 flex items-center justify-between font-mono text-[0.58rem] tracking-[0.25em] uppercase">
+    <span class="hidden sm:block">32.8986° N / 80.0405° W — KCHS</span>
+    <span class="flex items-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+      Operations Active — 24 / 7 / 365
+    </span>
+    <span class="hidden md:block">Adjacent to Boeing South Carolina</span>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+        <rect x="1" y="1" width="38" height="38" stroke="#0A0A0A" stroke-width="1"/>
+        <path d="M12 28 L20 10 L28 28" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <path d="M15 22 H25" stroke="#1B4D3E" stroke-width="1.5"/>
+      </svg>
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-xl font-semibold tracking-wide">DAWNS CLAW</span>
+        <span class="font-mono text-[0.55rem] tracking-[0.35em] text-forest uppercase">Aerospace Command</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="index.html" class="nav-link active">Command</a>
+      <a href="academy.html" class="nav-link">Academy</a>
+      <a href="network.html" class="nav-link">Network</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="join.html" class="nav-link">Enlist</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="join.html" class="hidden md:inline-flex btn-gold !py-3 !px-5"><span>Request Briefing</span></a>
+      <button id="menuBtn" aria-label="Menu" aria-expanded="false" class="lg:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-4 h-px bg-gold"></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden absolute top-full left-0 w-full bg-cream border-b border-ink/10 shadow-2xl">
+    <nav class="px-8 py-8 flex flex-col gap-6">
+      <a href="index.html" class="nav-link active text-sm">Command</a>
+      <a href="academy.html" class="nav-link text-sm">Academy</a>
+      <a href="network.html" class="nav-link text-sm">Network</a>
+      <a href="donate.html" class="nav-link text-sm">Donate</a>
+      <a href="join.html" class="nav-link text-sm">Enlist</a>
+      <a href="join.html" class="btn-gold w-fit mt-2"><span>Request Briefing</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-blueprint overflow-hidden">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/40 to-transparent hidden lg:block" style="right:18%"></div>
+
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-20 lg:pt-28 lg:pb-32 relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-8">
+        <div class="reveal flex items-center gap-4 mb-8">
+          <span class="w-10 h-px bg-gold"></span>
+          <span class="spec-label text-forest">Charleston, SC — Est. for the frontier of flight</span>
+        </div>
+        <h1 class="reveal font-display font-light text-[clamp(2.9rem,7vw,6.2rem)] leading-[0.98] tracking-tight" data-delay="1">
+          Aviation, commanded<br />
+          with <em class="text-forest not-italic font-medium">absolute</em><br />
+          <span class="relative inline-block">precision.<span class="absolute -bottom-1 left-0 w-full h-[3px] bg-gold"></span></span>
+        </h1>
+        <p class="reveal mt-8 max-w-xl text-ink/65 text-base sm:text-lg font-light leading-relaxed" data-delay="2">
+          Dawns Claw is a white-glove aerospace management agency serving owners, flight departments, and VIP operators — uniting elite FAA-certified technicians, autonomous inspection fleets, and concierge asset care into a single command structure.
+        </p>
+        <div class="reveal mt-10 flex flex-wrap gap-4" data-delay="3">
+          <a href="join.html" class="btn-gold"><span>Request Concierge Briefing</span><span>→</span></a>
+          <a href="network.html" class="btn-ghost"><span>Explore the Network</span></a>
+        </div>
+      </div>
+
+      <!-- HUD side panel -->
+      <div class="lg:col-span-4 reveal" data-delay="3">
+        <div class="hud-frame bg-white/70 backdrop-blur border border-ink/10 p-7">
+          <div class="spec-label text-gold mb-6">// Operational Readout</div>
+          <dl class="space-y-6">
+            <div class="flex items-baseline justify-between border-b border-ink/8 pb-4">
+              <dt class="font-mono text-[0.6rem] tracking-[0.2em] text-ink/50 uppercase">Response Doctrine</dt>
+              <dd class="font-display text-2xl font-medium">24/7</dd>
+            </div>
+            <div class="flex items-baseline justify-between border-b border-ink/8 pb-4">
+              <dt class="font-mono text-[0.6rem] tracking-[0.2em] text-ink/50 uppercase">Credential Standard</dt>
+              <dd class="font-display text-2xl font-medium">FAA A&amp;P / IA</dd>
+            </div>
+            <div class="flex items-baseline justify-between border-b border-ink/8 pb-4">
+              <dt class="font-mono text-[0.6rem] tracking-[0.2em] text-ink/50 uppercase">Inspection Vertical</dt>
+              <dd class="font-display text-2xl font-medium">Autonomous</dd>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <dt class="font-mono text-[0.6rem] tracking-[0.2em] text-ink/50 uppercase">Home Station</dt>
+              <dd class="font-display text-2xl font-medium">KCHS</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITY MARQUEE ============ -->
+<div class="bg-forest text-cream/85 border-y border-gold/30 overflow-hidden py-4">
+  <div class="marquee-track font-mono text-[0.62rem] tracking-[0.3em] uppercase">
+    <span class="flex items-center gap-10 pr-10">
+      <span>Concierge Aircraft Management</span><span class="text-gold">◆</span>
+      <span>A&amp;P / IA Labor Network</span><span class="text-gold">◆</span>
+      <span>Autonomous Airframe Inspection</span><span class="text-rose">◆</span>
+      <span>Custom Drone Fabrication</span><span class="text-gold">◆</span>
+      <span>Government Contract Pipeline</span><span class="text-gold">◆</span>
+      <span>Detailing &amp; Asset Care</span><span class="text-gold">◆</span>
+    </span>
+    <span class="flex items-center gap-10 pr-10" aria-hidden="true">
+      <span>Concierge Aircraft Management</span><span class="text-gold">◆</span>
+      <span>A&amp;P / IA Labor Network</span><span class="text-gold">◆</span>
+      <span>Autonomous Airframe Inspection</span><span class="text-rose">◆</span>
+      <span>Custom Drone Fabrication</span><span class="text-gold">◆</span>
+      <span>Government Contract Pipeline</span><span class="text-gold">◆</span>
+      <span>Detailing &amp; Asset Care</span><span class="text-gold">◆</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ POSITIONING ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-4 reveal">
+        <div class="spec-label text-gold mb-4">SEC. 01 — The Standard</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight">Time is the ultimate currency.</h2>
+      </div>
+      <div class="lg:col-span-8 reveal" data-delay="1">
+        <p class="text-ink/70 leading-relaxed text-lg font-light">
+          For elite aircraft owners, corporate flight departments, and private operators, every grounded hour is capital lost. Dawns Claw is not a repair shop — it is a premium aviation management agency. We orchestrate maintenance, detailing, scheduling, and airworthiness from wheels-down to wheels-up, delivering luxury treatment, exclusive membership models, and complete asset peace of mind.
+        </p>
+        <div class="hairline-gold mt-8 max-w-sm"></div>
+        <p class="mt-6 font-mono text-[0.65rem] tracking-[0.25em] uppercase text-ink/45">
+          Managed — not merely maintained.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES GRID ============ -->
+<section class="pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex items-end justify-between mb-12 reveal">
+      <div>
+        <div class="spec-label text-gold mb-4">SEC. 02 — Divisions</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light">Operational Verticals</h2>
+      </div>
+      <span class="hidden md:block font-mono text-[0.6rem] tracking-[0.25em] text-ink/40 uppercase">04 Divisions Active</span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="dc-card hud-frame p-7 reveal">
+        <div class="card-index mb-6">DIV — 01</div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="mb-5"><path d="M2 17 L12 4 L22 17 M7 17 H17" stroke="#1B4D3E" stroke-width="1.2"/><circle cx="12" cy="17" r="1.4" fill="#D4AF37"/></svg>
+        <h3 class="font-display text-2xl font-medium mb-3">White-Glove Concierge</h3>
+        <p class="text-sm text-ink/60 leading-relaxed">Full-spectrum asset stewardship: maintenance orchestration, detailing, hangar logistics, and trip-ready scheduling for owners who measure time in takeoffs.</p>
+        <div class="hairline-gold mt-6"></div>
+      </div>
+
+      <div class="dc-card hud-frame p-7 reveal" data-delay="1">
+        <div class="card-index mb-6">DIV — 02</div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="mb-5"><path d="M14 4 L20 10 L9 21 H3 V15 Z" stroke="#1B4D3E" stroke-width="1.2"/><path d="M14 4 L17 7" stroke="#D4AF37" stroke-width="1.2"/></svg>
+        <h3 class="font-display text-2xl font-medium mb-3">Elite Labor Network</h3>
+        <p class="text-sm text-ink/60 leading-relaxed">A vetted marketplace of senior FAA A&amp;P and IA mechanics — each carrying personal tooling, liability insurance, and airworthiness sign-off authority.</p>
+        <div class="hairline-gold mt-6"></div>
+      </div>
+
+      <div class="dc-card hud-frame p-7 reveal" data-delay="2">
+        <div class="card-index mb-6">DIV — 03</div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="mb-5"><rect x="9" y="9" width="6" height="6" stroke="#D4AF37" stroke-width="1.2"/><path d="M12 2 V9 M12 15 V22 M2 12 H9 M15 12 H22 M5 5 L8 8 M19 5 L16 8 M5 19 L8 16 M19 19 L16 16" stroke="#1B4D3E" stroke-width="1.2"/></svg>
+        <h3 class="font-display text-2xl font-medium mb-3">Autonomous Inspection</h3>
+        <p class="text-sm text-ink/60 leading-relaxed">Specialized drone fleets with thermal and structural imaging execute microscopic airframe surveys — rapid, repeatable, and documented to audit standard.</p>
+        <div class="hairline-gold mt-6"></div>
+      </div>
+
+      <div class="dc-card hud-frame p-7 reveal" data-delay="3">
+        <div class="card-index mb-6">DIV — 04</div>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="mb-5"><path d="M4 20 L12 4 L20 20 Z" stroke="#1B4D3E" stroke-width="1.2"/><path d="M8.5 13 H15.5" stroke="#D4AF37" stroke-width="1.2"/></svg>
+        <h3 class="font-display text-2xl font-medium mb-3">Custom Fabrication</h3>
+        <p class="text-sm text-ink/60 leading-relaxed">One-off drone configurations, bespoke aircraft interiors, and specialized modifications — engineered once, engineered correctly.</p>
+        <div class="hairline-gold mt-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPERATING MODEL ============ -->
+<section class="bg-forest text-cream py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5 reveal">
+        <div class="spec-label text-gold mb-4">SEC. 03 — The Model</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight mb-6">The zero-vulnerability ecosystem.</h2>
+        <p class="text-cream/70 font-light leading-relaxed">
+          Dawns Claw operates as an elite project-management firm and talent-matching marketplace — decoupled from any single hangar, mechanic, or bottleneck. Liability is distributed, agility is maximized, and operations never sleep.
+        </p>
+        <a href="join.html" class="btn-ghost-light mt-8"><span>Join the Roster</span><span>→</span></a>
+      </div>
+      <div class="lg:col-span-7 grid gap-5">
+        <div class="reveal border border-cream/15 bg-ink/20 backdrop-blur p-7 flex gap-6" data-delay="1">
+          <span class="font-display text-4xl text-gold font-light">01</span>
+          <div>
+            <h3 class="font-display text-xl font-medium mb-2">Labor &amp; Sign-Offs</h3>
+            <p class="text-sm text-cream/60 leading-relaxed">We source, vet, and contract senior FAA A&amp;P/IA mechanics who arrive with their own toolsets, individual liability coverage, and certification authority — capability without a single point of failure.</p>
+          </div>
+        </div>
+        <div class="reveal border border-cream/15 bg-ink/20 backdrop-blur p-7 flex gap-6" data-delay="2">
+          <span class="font-display text-4xl text-gold font-light">02</span>
+          <div>
+            <h3 class="font-display text-xl font-medium mb-2">Infrastructure Partnerships</h3>
+            <p class="text-sm text-cream/60 leading-relaxed">We collaborate with independent FBOs and Part 145 Repair Stations to activate underutilized hangar space, specialized tooling, and test equipment across the Lowcountry.</p>
+          </div>
+        </div>
+        <div class="reveal border border-cream/15 bg-ink/20 backdrop-blur p-7 flex gap-6" data-delay="3">
+          <span class="font-display text-4xl text-gold font-light">03</span>
+          <div>
+            <h3 class="font-display text-xl font-medium mb-2">Distributed Command</h3>
+            <p class="text-sm text-cream/60 leading-relaxed">By separating the brand from any single asset, the ecosystem remains operational 24/7/365 — protected, scalable, and built to absorb surge demand without degradation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="spec-label text-gold mb-4">SEC. 04 — Membership</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-light">Tiers of Command</h2>
+      <p class="mt-4 text-ink/55 font-light max-w-xl mx-auto">Three levels of engagement, calibrated to how your operation moves.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 items-stretch">
+      <div class="dc-card p-8 flex flex-col reveal">
+        <div class="card-index mb-5">TIER — 01</div>
+        <h3 class="font-display text-3xl font-medium">Envoy</h3>
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mt-1 mb-6">On-Demand Retention</p>
+        <ul class="space-y-3 text-sm text-ink/65 font-light flex-1">
+          <li class="flex gap-3"><span class="text-gold">◆</span>Priority AOG dispatch coordination</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Vetted A&amp;P network access</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Detailing &amp; turnaround scheduling</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Digital maintenance ledger</li>
+        </ul>
+        <a href="join.html" class="btn-ghost mt-8 justify-center"><span>Request Terms</span></a>
+      </div>
+
+      <div class="dc-card p-8 flex flex-col reveal border-forest relative" data-delay="1">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-forest text-cream font-mono text-[0.55rem] tracking-[0.3em] uppercase px-4 py-1.5">Flagship</span>
+        <div class="card-index mb-5">TIER — 02</div>
+        <h3 class="font-display text-3xl font-medium">Command</h3>
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mt-1 mb-6">Managed Operations</p>
+        <ul class="space-y-3 text-sm text-ink/65 font-light flex-1">
+          <li class="flex gap-3"><span class="text-gold">◆</span>Dedicated asset command officer</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Full maintenance &amp; detailing orchestration</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Quarterly autonomous inspection sweeps</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Hangar &amp; FBO logistics brokerage</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>24/7 operational hotline</li>
+        </ul>
+        <a href="join.html" class="btn-gold mt-8 justify-center"><span>Request Briefing</span></a>
+      </div>
+
+      <div class="dc-card p-8 flex flex-col reveal" data-delay="2">
+        <div class="card-index mb-5">TIER — 03</div>
+        <h3 class="font-display text-3xl font-medium">Sovereign</h3>
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mt-1 mb-6">Fleet &amp; Flight Department</p>
+        <ul class="space-y-3 text-sm text-ink/65 font-light flex-1">
+          <li class="flex gap-3"><span class="text-gold">◆</span>Multi-aircraft program management</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Embedded inspection &amp; compliance cadence</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Custom fabrication &amp; interior programs</li>
+          <li class="flex gap-3"><span class="text-gold">◆</span>Procurement &amp; audit-readiness support</li>
+        </ul>
+        <a href="join.html" class="btn-ghost mt-8 justify-center"><span>Open a Channel</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ANCHOR ============ -->
+<section class="border-y border-ink/10 bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <div class="spec-label text-gold mb-4">SEC. 05 — Home Station</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight mb-6">Positioned at the heart of American aerospace.</h2>
+      <p class="text-ink/65 font-light leading-relaxed mb-8">
+        Charleston is not a backdrop — it is a strategic asset. Operating adjacent to Boeing South Carolina and Charleston International (KCHS), Dawns Claw sits inside one of the densest corridors of airframe talent, MRO infrastructure, and advanced manufacturing in the country.
+      </p>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="border-l-2 border-gold pl-4">
+          <div class="font-display text-3xl font-medium">KCHS</div>
+          <div class="font-mono text-[0.55rem] tracking-[0.2em] text-ink/45 uppercase mt-1">Intl. Airport</div>
+        </div>
+        <div class="border-l-2 border-forest pl-4">
+          <div class="font-display text-3xl font-medium">Boeing</div>
+          <div class="font-mono text-[0.55rem] tracking-[0.2em] text-ink/45 uppercase mt-1">SC Campus</div>
+        </div>
+        <div class="border-l-2 border-rose pl-4">
+          <div class="font-display text-3xl font-medium">JB CHS</div>
+          <div class="font-mono text-[0.55rem] tracking-[0.2em] text-ink/45 uppercase mt-1">Joint Base</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal hud-frame border border-ink/10 bg-cream p-8" data-delay="1">
+      <div class="spec-label text-forest mb-6">// Corridor Access</div>
+      <ul class="space-y-5">
+        <li class="flex items-start gap-4">
+          <span class="font-mono text-[0.6rem] text-gold tracking-widest mt-1">01</span>
+          <p class="text-sm text-ink/65 leading-relaxed"><span class="font-medium text-ink">Part 145 Repair Stations</span> — certified hangar and test-cell capacity activated on demand across the metro.</p>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="font-mono text-[0.6rem] text-gold tracking-widest mt-1">02</span>
+          <p class="text-sm text-ink/65 leading-relaxed"><span class="font-medium text-ink">FBO Network</span> — executive handling, fueling, and ramp logistics through established Lowcountry partners.</p>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="font-mono text-[0.6rem] text-gold tracking-widest mt-1">03</span>
+          <p class="text-sm text-ink/65 leading-relaxed"><span class="font-medium text-ink">Defense &amp; Procurement Corridor</span> — proximity to Joint Base Charleston positions the firm for government contract pipeline development.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT-GEN ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 reveal">
+        <div class="spec-label text-gold mb-4">SEC. 06 — Frontier</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight">Built for what aviation becomes next.</h2>
+      </div>
+      <div class="lg:col-span-7 space-y-5">
+        <div class="dc-card p-7 reveal" data-delay="1">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-display text-2xl font-medium">AI-Driven Autonomous Inspection</h3>
+            <span class="font-mono text-[0.55rem] tracking-[0.25em] text-rose uppercase">Active R&amp;D</span>
+          </div>
+          <p class="text-sm text-ink/60 leading-relaxed">Thermal and structural imaging drones perform microscopic airframe checks autonomously — compressing inspection windows from days to hours while building a permanent digital record of airframe health.</p>
+        </div>
+        <div class="dc-card p-7 reveal" data-delay="2">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-display text-2xl font-medium">One-Off Custom Fabrication</h3>
+            <span class="font-mono text-[0.55rem] tracking-[0.25em] text-forest uppercase">Commissioned</span>
+          </div>
+          <p class="text-sm text-ink/60 leading-relaxed">Bespoke drone configurations, luxury interior programs, and specialized airframe modifications — each project treated as a singular engineering commission.</p>
+        </div>
+        <div class="dc-card p-7 reveal" data-delay="3">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-display text-2xl font-medium">Government Contract Pipeline</h3>
+            <span class="font-mono text-[0.55rem] tracking-[0.25em] text-gold uppercase">Structured</span>
+          </div>
+          <p class="text-sm text-ink/60 leading-relaxed">The business architecture is being pre-built to meet strict procurement, defense, and civilian aerospace auditing standards — positioning Dawns Claw for high-value federal engagements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-ink text-cream py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
+    <div class="spec-label text-gold mb-6 reveal">// Final Transmission</div>
+    <h2 class="font-display text-4xl sm:text-6xl font-light leading-tight reveal" data-delay="1">
+      Your aircraft deserves a <span class="text-gold">command</span>, not a queue.
+    </h2>
+    <p class="mt-6 text-cream/60 font-light max-w-lg mx-auto reveal" data-delay="2">
+      Open a channel with our operations desk. Briefings are discreet, obligation-free, and answered within one business day.
+    </p>
+    <div class="mt-10 flex flex-wrap justify-center gap-4 reveal" data-delay="3">
+      <a href="join.html" class="btn-gold"><span>Request Briefing</span><span>→</span></a>
+      <a href="academy.html" class="btn-ghost-light"><span>Chart a Career Path</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-cream/60 border-t border-cream/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="font-display text-2xl text-cream font-medium mb-3">DAWNS CLAW</div>
+      <p class="text-xs leading-relaxed text-cream/45">Premium aviation concierge management, autonomous systems, and aerospace consultancy. Charleston, South Carolina.</p>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Navigate</div>
+      <ul class="space-y-3 text-xs font-mono tracking-[0.15em] uppercase">
+        <li><a href="index.html" class="hover:text-gold transition-colors">Command</a></li>
+        <li><a href="academy.html" class="hover:text-gold transition-colors">Academy</a></li>
+        <li><a href="network.html" class="hover:text-gold transition-colors">Network</a></li>
+        <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+        <li><a href="join.html" class="hover:text-gold transition-colors">Enlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Operations Desk</div>
+      <ul class="space-y-3 text-xs">
+        <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
+        <li class="font-mono tracking-wider">ops@dawnsclaw.aero</li>
+        <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Doctrine</div>
+      <p class="text-xs leading-relaxed text-cream/45">Distributed liability. Elite credentials. Autonomous precision. Luxury without compromise.</p>
+    </div>
+  </div>
+  <div class="border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 font-mono text-[0.58rem] tracking-[0.25em] uppercase text-cream/35">
+      <span>© <span data-year>2026</span> Dawns Claw Aerospace Command</span>
+      <span>Charleston, SC — 32.8986° N / 80.0405° W</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

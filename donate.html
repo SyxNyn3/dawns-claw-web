@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Donate — Dawns Claw | Hardware Manifest &amp; Giving Protocol</title>
+<meta name="description" content="Contribute aerospace tools, drones, and equipment to Dawns Claw workforce development — corporate write-offs via 501(c)(3) proxy routing." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/dc.css" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FDFBF7',
+        gold: '#D4AF37',
+        forest: '#1B4D3E',
+        ink: '#0A0A0A',
+        rose: '#E8B4B8'
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- ============ STATUS BAR ============ -->
+<div class="bg-ink text-cream/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-8 flex items-center justify-between font-mono text-[0.58rem] tracking-[0.25em] uppercase">
+    <span class="hidden sm:block">32.8986° N / 80.0405° W — KCHS</span>
+    <span class="flex items-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-rose animate-pulse"></span>
+      Donation &amp; Research Hub — Accepting
+    </span>
+    <span class="hidden md:block">Manifest Rev. C</span>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+        <rect x="1" y="1" width="38" height="38" stroke="#0A0A0A" stroke-width="1"/>
+        <path d="M12 28 L20 10 L28 28" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <path d="M15 22 H25" stroke="#1B4D3E" stroke-width="1.5"/>
+      </svg>
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-xl font-semibold tracking-wide">DAWNS CLAW</span>
+        <span class="font-mono text-[0.55rem] tracking-[0.35em] text-forest uppercase">Aerospace Command</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="index.html" class="nav-link">Command</a>
+      <a href="academy.html" class="nav-link">Academy</a>
+      <a href="network.html" class="nav-link">Network</a>
+      <a href="donate.html" class="nav-link active">Donate</a>
+      <a href="join.html" class="nav-link">Enlist</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="join.html" class="hidden md:inline-flex btn-gold !py-3 !px-5"><span>Pledge Hardware</span></a>
+      <button id="menuBtn" aria-label="Menu" aria-expanded="false" class="lg:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-4 h-px bg-gold"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden absolute top-full left-0 w-full bg-cream border-b border-ink/10 shadow-2xl">
+    <nav class="px-8 py-8 flex flex-col gap-6">
+      <a href="index.html" class="nav-link text-sm">Command</a>
+      <a href="academy.html" class="nav-link text-sm">Academy</a>
+      <a href="network.html" class="nav-link text-sm">Network</a>
+      <a href="donate.html" class="nav-link active text-sm">Donate</a>
+      <a href="join.html" class="nav-link text-sm">Enlist</a>
+      <a href="join.html" class="btn-gold w-fit mt-2"><span>Pledge Hardware</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-blueprint overflow-hidden">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-24 relative">
+    <div class="reveal flex items-center gap-4 mb-6">
+      <span class="w-10 h-px bg-gold"></span>
+      <span class="spec-label text-forest">The Donation &amp; Research Hub</span>
+    </div>
+    <h1 class="reveal font-display font-light text-[clamp(2.6rem,6vw,5rem)] leading-[1.02]" data-delay="1">
+      Retired hardware.<br /><span class="text-gold">New careers.</span>
+    </h1>
+    <p class="reveal mt-6 max-w-xl text-ink/65 font-light leading-relaxed" data-delay="2">
+      Every torque wrench, survey drone, and spool of filament placed on this manifest becomes a training instrument for the Lowcountry's next aerospace workforce — and a documented, defensible write-off for the donor.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PROTOCOL ============ -->
+<section class="py-14 lg:py-20 border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="spec-label text-gold mb-8 reveal">SEC. 01 — Transfer Protocol</div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="dc-card p-6 reveal">
+        <div class="font-display text-4xl text-gold font-light mb-3">01</div>
+        <h3 class="font-display text-xl font-medium mb-2">Pledge</h3>
+        <p class="text-xs text-ink/55 leading-relaxed">Submit the manifest item through the intake portal. Photographs and serial numbers accelerate appraisal.</p>
+      </div>
+      <div class="dc-card p-6 reveal" data-delay="1">
+        <div class="font-display text-4xl text-gold font-light mb-3">02</div>
+        <h3 class="font-display text-xl font-medium mb-2">Appraise</h3>
+        <p class="text-xs text-ink/55 leading-relaxed">Fair-market valuation is established and documented. Items over $5,000 are routed for qualified independent appraisal.</p>
+      </div>
+      <div class="dc-card p-6 reveal" data-delay="2">
+        <div class="font-display text-4xl text-gold font-light mb-3">03</div>
+        <h3 class="font-display text-xl font-medium mb-2">Transfer</h3>
+        <p class="text-xs text-ink/55 leading-relaxed">Coordinated pickup within the metro, or insured freight for out-of-region donors. Chain-of-custody is logged end to end.</p>
+      </div>
+      <div class="dc-card p-6 reveal" data-delay="3">
+        <div class="font-display text-4xl text-gold font-light mb-3">04</div>
+        <h3 class="font-display text-xl font-medium mb-2">Receipt</h3>
+        <p class="text-xs text-ink/55 leading-relaxed">A formal acknowledgment letter is issued through our 501(c)(3) proxy partner — the documentation your CPA requires.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFEST ============ -->
+<section class="py-14 lg:py-20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
+      <div>
+        <div class="spec-label text-gold mb-4">SEC. 02 — Active Requisition Manifest</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light">Hardware Required</h2>
+      </div>
+      <div class="flex gap-5 font-mono text-[0.58rem] tracking-[0.2em] uppercase">
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-forest"></span>Critical</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-gold"></span>High</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-rose"></span>Standard</span>
+      </div>
+    </div>
+
+    <!-- Category: Measurement -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-4 mb-5">
+        <span class="spec-label text-forest">CAT — A / Precision Measurement</span>
+        <span class="flex-1 h-px bg-ink/10"></span>
+      </div>
+      <div class="border border-ink/10 bg-white">
+        <div class="hidden sm:grid grid-cols-12 px-6 py-3 border-b border-ink/10 font-mono text-[0.55rem] tracking-[0.25em] uppercase text-ink/40">
+          <span class="col-span-1">Item</span><span class="col-span-6">Specification</span><span class="col-span-3">Application</span><span class="col-span-2 text-right">Priority</span>
+        </div>
+        <div class="divide-y divide-ink/5">
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">A01</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Calibrated torque wrench set — ¼″ through ¾″ drive, split-beam preferred</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Fastener discipline training</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">A02</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Video borescope — articulating probe, ≥6mm diameter, recording capable</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">NDT &amp; cylinder inspection</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">A03</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Pitot-static test set — RVSM-capable preferred</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Instrument &amp; avionics lab</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">A04</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Micrometer &amp; dial-indicator suite with granite surface plate</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Dimensional inspection</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-rose text-ink px-2.5 py-1">Standard</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: UAS -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-4 mb-5">
+        <span class="spec-label text-forest">CAT — B / Uncrewed Systems</span>
+        <span class="flex-1 h-px bg-ink/10"></span>
+      </div>
+      <div class="border border-ink/10 bg-white">
+        <div class="hidden sm:grid grid-cols-12 px-6 py-3 border-b border-ink/10 font-mono text-[0.55rem] tracking-[0.25em] uppercase text-ink/40">
+          <span class="col-span-1">Item</span><span class="col-span-6">Specification</span><span class="col-span-3">Application</span><span class="col-span-2 text-right">Priority</span>
+        </div>
+        <div class="divide-y divide-ink/5">
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">B01</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Enterprise UAS airframes — DJI M300/M350, Autel EVO Max, or equivalent (retired fleets welcome)</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Inspection sortie training</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">B02</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Thermal imaging payloads — FLIR, Zenmuse H20T/H30T class</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Structural heat-signature survey</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">B03</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Trainer quadcopters — DJI Mini/Avata class, any condition including parts-only</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Part 107 flight school</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">B04</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">LiPo/Li-ion batteries, charging hubs, and field power stations</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Sortie sustainment</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">B05</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">FPV build components — frames, ESCs, motors, VTX, radio links</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Custom fabrication curriculum</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-rose text-ink px-2.5 py-1">Standard</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Fabrication -->
+    <div class="mb-12 reveal">
+      <div class="flex items-center gap-4 mb-5">
+        <span class="spec-label text-forest">CAT — C / Fabrication &amp; Prototyping</span>
+        <span class="flex-1 h-px bg-ink/10"></span>
+      </div>
+      <div class="border border-ink/10 bg-white">
+        <div class="hidden sm:grid grid-cols-12 px-6 py-3 border-b border-ink/10 font-mono text-[0.55rem] tracking-[0.25em] uppercase text-ink/40">
+          <span class="col-span-1">Item</span><span class="col-span-6">Specification</span><span class="col-span-3">Application</span><span class="col-span-2 text-right">Priority</span>
+        </div>
+        <div class="divide-y divide-ink/5">
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">C01</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">FDM 3D printers — enclosed, high-temp capable (Bambu, Prusa, or industrial)</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Rapid prototyping lab</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">C02</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Engineering filament — PA-CF, PETG-CF, ABS-GF, polycarbonate</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Structural part printing</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">C03</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Sheet-metal toolkit — clecos, rivet guns, dimple dies, edge formers</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Airframe structures course</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">C04</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Composite materials — carbon fiber cloth, epoxy systems, vacuum bagging kit</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Composite repair training</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-rose text-ink px-2.5 py-1">Standard</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Shop -->
+    <div class="reveal">
+      <div class="flex items-center gap-4 mb-5">
+        <span class="spec-label text-forest">CAT — D / Shop &amp; General Aviation</span>
+        <span class="flex-1 h-px bg-ink/10"></span>
+      </div>
+      <div class="border border-ink/10 bg-white">
+        <div class="hidden sm:grid grid-cols-12 px-6 py-3 border-b border-ink/10 font-mono text-[0.55rem] tracking-[0.25em] uppercase text-ink/40">
+          <span class="col-span-1">Item</span><span class="col-span-6">Specification</span><span class="col-span-3">Application</span><span class="col-span-2 text-right">Priority</span>
+        </div>
+        <div class="divide-y divide-ink/5">
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">D01</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Mechanic's rollaways — Snap-on, Matco, or equivalent with aviation socket sets</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Apprentice tooling issue</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-forest text-cream px-2.5 py-1">Critical</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">D02</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Aircraft jacks, tail stands, and engine hoists — serviceable condition</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Airframe handling lab</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">D03</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Retired airframe sections, control surfaces, or powerplant cores for teardown</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Hands-on structures training</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-gold text-ink px-2.5 py-1">High</span></span>
+          </div>
+          <div class="grid grid-cols-12 px-6 py-4 items-center gap-y-1">
+            <span class="col-span-12 sm:col-span-1 font-mono text-xs text-gold">D04</span>
+            <span class="col-span-12 sm:col-span-6 text-sm font-medium">Technical publications — AMMs, IPCs, AC 43.13 sets, regulatory libraries</span>
+            <span class="col-span-9 sm:col-span-3 text-xs text-ink/50">Reference &amp; exam prep</span>
+            <span class="col-span-3 sm:col-span-2 text-right"><span class="font-mono text-[0.58rem] tracking-[0.2em] uppercase bg-rose text-ink px-2.5 py-1">Standard</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAX FRAMEWORK ============ -->
+<section class="bg-forest text-cream py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5 reveal">
+      <div class="spec-label text-gold mb-4">SEC. 03 — Fiscal Framework</div>
+      <h2 class="font-display text-4xl font-light leading-tight">Structured for the write-off.</h2>
+    </div>
+    <div class="lg:col-span-7 space-y-5">
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="1">
+        <h3 class="font-display text-xl font-medium mb-3">501(c)(3) Proxy Routing</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">Dawns Claw coordinates equipment donations through established 501(c)(3) workforce-development and educational partners. Donors receive formal acknowledgment letters from the qualified charitable entity — the documentation standard your tax counsel expects.</p>
+      </div>
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="2">
+        <h3 class="font-display text-xl font-medium mb-3">Corporate Equipment Programs</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">Flight departments refreshing tooling, drone programs decommissioning fleets, and manufacturers clearing demo inventory can convert depreciation dead-ends into deductible contributions — with logistics handled entirely by our desk.</p>
+      </div>
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="3">
+        <h3 class="font-display text-xl font-medium mb-3">Documentation Discipline</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">Every transfer is logged with chain-of-custody records, condition assessments, and fair-market valuation support. Items valued over $5,000 are flagged for the qualified appraisal IRS Form 8283 requires.</p>
+      </div>
+      <p class="text-xs text-cream/40 font-light italic reveal" data-delay="3">Dawns Claw provides logistics and coordination, not tax advice. Donors should confirm deductibility with a licensed CPA or tax counsel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="py-20 lg:py-24">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <div class="hud-frame inline-block border border-ink/10 bg-white px-10 sm:px-16 py-12">
+      <div class="spec-label text-gold mb-5">// Pledge Channel</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight mb-5">Have hardware on the manifest?</h2>
+      <p class="text-ink/60 font-light max-w-md mx-auto mb-8">Submit your items through the intake portal — select "Infrastructure Partner" and describe the equipment in the asset-contribution field.</p>
+      <a href="join.html" class="btn-gold"><span>Pledge via Intake Portal</span><span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-cream/60 border-t border-cream/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="font-display text-2xl text-cream font-medium mb-3">DAWNS CLAW</div>
+      <p class="text-xs leading-relaxed text-cream/45">Premium aviation concierge management, autonomous systems, and aerospace consultancy. Charleston, South Carolina.</p>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Navigate</div>
+      <ul class="space-y-3 text-xs font-mono tracking-[0.15em] uppercase">
+        <li><a href="index.html" class="hover:text-gold transition-colors">Command</a></li>
+        <li><a href="academy.html" class="hover:text-gold transition-colors">Academy</a></li>
+        <li><a href="network.html" class="hover:text-gold transition-colors">Network</a></li>
+        <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+        <li><a href="join.html" class="hover:text-gold transition-colors">Enlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Operations Desk</div>
+      <ul class="space-y-3 text-xs">
+        <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
+        <li class="font-mono tracking-wider">ops@dawnsclaw.aero</li>
+        <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Doctrine</div>
+      <p class="text-xs leading-relaxed text-cream/45">Distributed liability. Elite credentials. Autonomous precision. Luxury without compromise.</p>
+    </div>
+  </div>
+  <div class="border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 font-mono text-[0.58rem] tracking-[0.25em] uppercase text-cream/35">
+      <span>© <span data-year>2026</span> Dawns Claw Aerospace Command</span>
+      <span>Charleston, SC — 32.8986° N / 80.0405° W</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

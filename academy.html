@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Academy — Dawns Claw | Aerospace License Direction Engine</title>
+<meta name="description" content="Chart your aerospace career: FAA Part 107, A&P, IA, avionics, and management pathways mapped step by step." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/dc.css" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FDFBF7',
+        gold: '#D4AF37',
+        forest: '#1B4D3E',
+        ink: '#0A0A0A',
+        rose: '#E8B4B8'
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace']
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- ============ STATUS BAR ============ -->
+<div class="bg-ink text-cream/70">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-8 flex items-center justify-between font-mono text-[0.58rem] tracking-[0.25em] uppercase">
+    <span class="hidden sm:block">32.8986° N / 80.0405° W — KCHS</span>
+    <span class="flex items-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+      Direction Engine — Online
+    </span>
+    <span class="hidden md:block">Career Cartography Division</span>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" class="transition-transform duration-500 group-hover:rotate-45">
+        <rect x="1" y="1" width="38" height="38" stroke="#0A0A0A" stroke-width="1"/>
+        <path d="M12 28 L20 10 L28 28" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+        <path d="M15 22 H25" stroke="#1B4D3E" stroke-width="1.5"/>
+      </svg>
+      <span class="flex flex-col leading-none">
+        <span class="font-display text-xl font-semibold tracking-wide">DAWNS CLAW</span>
+        <span class="font-mono text-[0.55rem] tracking-[0.35em] text-forest uppercase">Aerospace Command</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="index.html" class="nav-link">Command</a>
+      <a href="academy.html" class="nav-link active">Academy</a>
+      <a href="network.html" class="nav-link">Network</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="join.html" class="nav-link">Enlist</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="join.html" class="hidden md:inline-flex btn-gold !py-3 !px-5"><span>Request Briefing</span></a>
+      <button id="menuBtn" aria-label="Menu" aria-expanded="false" class="lg:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-4 h-px bg-gold"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden absolute top-full left-0 w-full bg-cream border-b border-ink/10 shadow-2xl">
+    <nav class="px-8 py-8 flex flex-col gap-6">
+      <a href="index.html" class="nav-link text-sm">Command</a>
+      <a href="academy.html" class="nav-link active text-sm">Academy</a>
+      <a href="network.html" class="nav-link text-sm">Network</a>
+      <a href="donate.html" class="nav-link text-sm">Donate</a>
+      <a href="join.html" class="nav-link text-sm">Enlist</a>
+      <a href="join.html" class="btn-gold w-fit mt-2"><span>Request Briefing</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-blueprint overflow-hidden">
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 lg:py-24 relative">
+    <div class="reveal flex items-center gap-4 mb-6">
+      <span class="w-10 h-px bg-gold"></span>
+      <span class="spec-label text-forest">The Aerospace Academy</span>
+    </div>
+    <h1 class="reveal font-display font-light text-[clamp(2.6rem,6vw,5rem)] leading-[1.02]" data-delay="1">
+      Every license<br />is a <span class="text-forest">flight plan</span>.
+    </h1>
+    <p class="reveal mt-6 max-w-xl text-ink/65 font-light leading-relaxed" data-delay="2">
+      Dawns Claw builds the ladder for the next generation of aerospace talent. Select a destination below and the direction engine lays out the exact credential sequence — timeline, cost band, and examination checkpoints included.
+    </p>
+  </div>
+</section>
+
+<!-- ============ DIRECTION ENGINE ============ -->
+<section class="py-14 lg:py-20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="spec-label text-gold mb-6 reveal">SEC. 01 — Select Destination</div>
+
+    <div class="grid lg:grid-cols-12 gap-8">
+      <!-- Track selector -->
+      <div class="lg:col-span-4 space-y-3" id="trackNav" role="tablist" aria-label="Credential tracks">
+        <button class="track-btn w-full text-left dc-card p-5 flex items-center justify-between gap-4" data-track="p107" role="tab" aria-selected="true">
+          <div>
+            <div class="card-index mb-1">TRACK — 01</div>
+            <h3 class="font-display text-xl font-medium">Part 107 Remote Pilot</h3>
+          </div>
+          <span class="font-mono text-gold text-lg">→</span>
+        </button>
+        <button class="track-btn w-full text-left dc-card p-5 flex items-center justify-between gap-4" data-track="ap" role="tab" aria-selected="false">
+          <div>
+            <div class="card-index mb-1">TRACK — 02</div>
+            <h3 class="font-display text-xl font-medium">A&amp;P Mechanic</h3>
+          </div>
+          <span class="font-mono text-gold text-lg">→</span>
+        </button>
+        <button class="track-btn w-full text-left dc-card p-5 flex items-center justify-between gap-4" data-track="ia" role="tab" aria-selected="false">
+          <div>
+            <div class="card-index mb-1">TRACK — 03</div>
+            <h3 class="font-display text-xl font-medium">Inspection Authorization</h3>
+          </div>
+          <span class="font-mono text-gold text-lg">→</span>
+        </button>
+        <button class="track-btn w-full text-left dc-card p-5 flex items-center justify-between gap-4" data-track="avionics" role="tab" aria-selected="false">
+          <div>
+            <div class="card-index mb-1">TRACK — 04</div>
+            <h3 class="font-display text-xl font-medium">Avionics &amp; GROL</h3>
+          </div>
+          <span class="font-mono text-gold text-lg">→</span>
+        </button>
+        <button class="track-btn w-full text-left dc-card p-5 flex items-center justify-between gap-4" data-track="mgmt" role="tab" aria-selected="false">
+          <div>
+            <div class="card-index mb-1">TRACK — 05</div>
+            <h3 class="font-display text-xl font-medium">Aerospace Management</h3>
+          </div>
+          <span class="font-mono text-gold text-lg">→</span>
+        </button>
+      </div>
+
+      <!-- Detail panel -->
+      <div class="lg:col-span-8">
+        <div id="trackPanel" class="hud-frame bg-white border border-ink/10 p-8 sm:p-10">
+          <div class="flex flex-wrap items-baseline justify-between gap-4 mb-2">
+            <h2 id="tpTitle" class="font-display text-3xl sm:text-4xl font-light"></h2>
+            <span id="tpCode" class="spec-label text-gold"></span>
+          </div>
+          <p id="tpDesc" class="text-sm text-ink/60 font-light leading-relaxed mb-8"></p>
+
+          <div class="grid sm:grid-cols-3 gap-4 mb-8">
+            <div class="border border-ink/10 p-4">
+              <div class="spec-label text-ink/40 mb-2">Timeline</div>
+              <div id="tpTime" class="font-display text-lg font-medium"></div>
+            </div>
+            <div class="border border-ink/10 p-4">
+              <div class="spec-label text-ink/40 mb-2">Cost Band</div>
+              <div id="tpCost" class="font-display text-lg font-medium"></div>
+            </div>
+            <div class="border border-ink/10 p-4">
+              <div class="spec-label text-ink/40 mb-2">Gate Exam</div>
+              <div id="tpExam" class="font-display text-lg font-medium"></div>
+            </div>
+          </div>
+
+          <div class="spec-label text-forest mb-5">// Credential Sequence</div>
+          <ol id="tpSteps" class="space-y-4"></ol>
+
+          <div class="hairline-gold mt-8"></div>
+          <p id="tpNote" class="mt-5 text-xs text-ink/50 font-light italic leading-relaxed"></p>
+
+          <a href="join.html" class="btn-gold mt-8"><span>Begin This Track</span><span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRINCIPLES ============ -->
+<section class="bg-forest text-cream py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="spec-label text-gold mb-4 reveal">SEC. 02 — Doctrine</div>
+    <h2 class="font-display text-4xl sm:text-5xl font-light mb-12 reveal" data-delay="1">How we navigate careers.</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="1">
+        <div class="font-display text-4xl text-gold font-light mb-4">01</div>
+        <h3 class="font-display text-xl font-medium mb-3">Clarity over hype</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">No vague promises. Every pathway is mapped to actual FAA requirements, real exam gates, and honest cost bands — so you know the mission before you launch.</p>
+      </div>
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="2">
+        <div class="font-display text-4xl text-gold font-light mb-4">02</div>
+        <h3 class="font-display text-xl font-medium mb-3">Mentorship embedded</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">Academy participants gain structured access to the Dawns Claw network — working A&amp;Ps, IAs, and commercial UAS operators who remember earning their first signature authority.</p>
+      </div>
+      <div class="border border-cream/15 bg-ink/20 p-7 reveal" data-delay="3">
+        <div class="font-display text-4xl text-gold font-light mb-4">03</div>
+        <h3 class="font-display text-xl font-medium mb-3">Credentials to command</h3>
+        <p class="text-sm text-cream/60 leading-relaxed font-light">The ladder does not stop at licensure. Top candidates are fast-tracked into the contractor roster — turning certification into billable sorties immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCAL RESOURCES ============ -->
+<section class="py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 reveal">
+        <div class="spec-label text-gold mb-4">SEC. 03 — Lowcountry Launch Points</div>
+        <h2 class="font-display text-4xl font-light leading-tight">Where Charleston trains its own.</h2>
+        <p class="mt-5 text-ink/60 font-light leading-relaxed">The region already holds the infrastructure — the Academy's role is to route you through it efficiently, in the correct order, with zero wasted tuition.</p>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        <div class="dc-card p-6 reveal" data-delay="1">
+          <div class="card-index mb-3">INST — A</div>
+          <h3 class="font-display text-xl font-medium mb-2">Trident Technical College</h3>
+          <p class="text-xs text-ink/55 leading-relaxed">FAA Part 147 aviation maintenance program — the regional runway to A&amp;P certification with airframe and powerplant ratings.</p>
+        </div>
+        <div class="dc-card p-6 reveal" data-delay="2">
+          <div class="card-index mb-3">INST — B</div>
+          <h3 class="font-display text-xl font-medium mb-2">Ready SC / Apprenticeship Carolina</h3>
+          <p class="text-xs text-ink/55 leading-relaxed">State-funded apprenticeship frameworks and workforce grants that materially reduce out-of-pocket training cost.</p>
+        </div>
+        <div class="dc-card p-6 reveal" data-delay="3">
+          <div class="card-index mb-3">INST — C</div>
+          <h3 class="font-display text-xl font-medium mb-2">FAA Testing Centers — KCHS Corridor</h3>
+          <p class="text-xs text-ink/55 leading-relaxed">Knowledge testing and DME oral/practical examination capacity within the metro — no relocation required for any gate.</p>
+        </div>
+        <div class="dc-card p-6 reveal" data-delay="4">
+          <div class="card-index mb-3">INST — D</div>
+          <h3 class="font-display text-xl font-medium mb-2">Dawns Claw Field Rotations</h3>
+          <p class="text-xs text-ink/55 leading-relaxed">Supervised sorties alongside rostered contractors — documented experience hours that count toward real-world proficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-ink text-cream py-16 lg:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
+    <h2 class="font-display text-4xl sm:text-5xl font-light leading-tight reveal">The ladder is built. <span class="text-gold">Climb it.</span></h2>
+    <div class="mt-8 flex flex-wrap justify-center gap-4 reveal" data-delay="1">
+      <a href="join.html" class="btn-gold"><span>Apply to the Academy</span><span>→</span></a>
+      <a href="donate.html" class="btn-ghost-light"><span>Fund the Next Cohort</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-cream/60 border-t border-cream/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="font-display text-2xl text-cream font-medium mb-3">DAWNS CLAW</div>
+      <p class="text-xs leading-relaxed text-cream/45">Premium aviation concierge management, autonomous systems, and aerospace consultancy. Charleston, South Carolina.</p>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Navigate</div>
+      <ul class="space-y-3 text-xs font-mono tracking-[0.15em] uppercase">
+        <li><a href="index.html" class="hover:text-gold transition-colors">Command</a></li>
+        <li><a href="academy.html" class="hover:text-gold transition-colors">Academy</a></li>
+        <li><a href="network.html" class="hover:text-gold transition-colors">Network</a></li>
+        <li><a href="donate.html" class="hover:text-gold transition-colors">Donate</a></li>
+        <li><a href="join.html" class="hover:text-gold transition-colors">Enlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Operations Desk</div>
+      <ul class="space-y-3 text-xs">
+        <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
+        <li class="font-mono tracking-wider">ops@dawnsclaw.aero</li>
+        <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
+      </ul>
+    </div>
+    <div>
+      <div class="spec-label text-gold mb-5">Doctrine</div>
+      <p class="text-xs leading-relaxed text-cream/45">Distributed liability. Elite credentials. Autonomous precision. Luxury without compromise.</p>
+    </div>
+  </div>
+  <div class="border-t border-cream/10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between gap-3 font-mono text-[0.58rem] tracking-[0.25em] uppercase text-cream/35">
+      <span>© <span data-year>2026</span> Dawns Claw Aerospace Command</span>
+      <span>Charleston, SC — 32.8986° N / 80.0405° W</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/academy.js"></script>
+</body>
+</html>
