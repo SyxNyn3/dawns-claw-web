@@ -273,6 +273,44 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ============ FIELD LOG ============ -->
+<section class="pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex items-end justify-between mb-10 reveal">
+      <div>
+        <div class="spec-label text-gold mb-4">FIELD LOG</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light">In the hangar.</h2>
+      </div>
+      <span class="hidden md:block font-mono text-[0.6rem] tracking-[0.25em] text-ink/40 uppercase">Imagery — Unsplash License</span>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-5">
+      <div class="photo-frame hud-frame lg:col-span-2 h-72 lg:h-[430px] reveal">
+        <img src="assets/img/hangar-jet.jpg" alt="Prototype jet positioned inside a hangar bay beneath overhead cranes" loading="lazy" />
+        <div class="photo-caption">
+          <span class="spec-label !text-[0.55rem]">Prototype bay // flight-line ready</span>
+          <span class="font-mono text-[0.55rem] text-gold tracking-widest">IMG — 01</span>
+        </div>
+      </div>
+      <div class="grid gap-5">
+        <div class="photo-frame hud-frame h-52 lg:h-[205px] reveal" data-delay="1">
+          <img src="assets/img/mechanic-wing.jpg" alt="Certified mechanic inspecting a small aircraft wing" loading="lazy" />
+          <div class="photo-caption">
+            <span class="spec-label !text-[0.55rem]">Airframe check // wing walk</span>
+            <span class="font-mono text-[0.55rem] text-gold tracking-widest">IMG — 02</span>
+          </div>
+        </div>
+        <div class="photo-frame hud-frame h-52 lg:h-[205px] reveal" data-delay="2">
+          <img src="assets/img/hangar-ga.jpg" alt="Light aircraft positioned inside a private hangar" loading="lazy" />
+          <div class="photo-caption">
+            <span class="spec-label !text-[0.55rem]">Hangar ops // GA division</span>
+            <span class="font-mono text-[0.55rem] text-gold tracking-widest">IMG — 03</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ OPERATING MODEL ============ -->
 <section class="bg-forest text-cream py-20 lg:py-28 relative overflow-hidden">
   <div class="absolute inset-0 bg-blueprint-dark"></div>
@@ -392,7 +430,15 @@ tailwind.config = {
         </div>
       </div>
     </div>
-    <div class="reveal hud-frame border border-ink/10 bg-cream p-8" data-delay="1">
+    <div class="reveal hud-frame border border-ink/10 bg-cream overflow-hidden" data-delay="1">
+      <div class="photo-frame border-0 h-44 lg:h-52">
+        <img src="assets/img/bridge-chs.jpg" alt="Aerial view of the Arthur Ravenel Jr. Bridge over the Cooper River, Charleston" loading="lazy" />
+        <div class="photo-caption">
+          <span class="spec-label !text-[0.55rem]">Ravenel Bridge // Cooper River</span>
+          <span class="font-mono text-[0.55rem] text-gold tracking-widest">KCHS</span>
+        </div>
+      </div>
+      <div class="p-8">
       <div class="spec-label text-forest mb-6">// Corridor Access</div>
       <ul class="space-y-5">
         <li class="flex items-start gap-4">
@@ -408,6 +454,7 @@ tailwind.config = {
           <p class="text-sm text-ink/65 leading-relaxed"><span class="font-medium text-ink">Defense &amp; Procurement Corridor</span> — proximity to Joint Base Charleston positions the firm for government contract pipeline development.</p>
         </li>
       </ul>
+      </div>
     </div>
   </div>
 </section>
