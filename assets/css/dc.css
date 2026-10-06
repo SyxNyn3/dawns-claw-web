@@ -268,3 +268,60 @@ body {
   clip-path: inset(0 0 100% 0);
 }
 #mobileMenu.open { clip-path: inset(0 0 0 0); }
+
+/* ============================================================
+   VISUAL LAYER — tactical illustration & ambience
+   ============================================================ */
+
+/* Ambient glows */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(80px);
+}
+.glow-gold   { background: rgba(212, 175, 55, 0.20); }
+.glow-forest { background: rgba(27, 77, 62, 0.18); }
+.glow-rose   { background: rgba(232, 180, 184, 0.24); }
+
+/* Illustration frame */
+.art-frame {
+  position: relative;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  background:
+    linear-gradient(160deg, #ffffff 0%, var(--cream) 55%, rgba(212, 175, 55, 0.07) 100%);
+  overflow: hidden;
+}
+.art-frame-dark {
+  position: relative;
+  border: 1px solid rgba(253, 251, 247, 0.14);
+  background:
+    linear-gradient(160deg, rgba(10, 10, 10, 0.5) 0%, rgba(27, 77, 62, 0.25) 60%, rgba(212, 175, 55, 0.1) 100%);
+  overflow: hidden;
+}
+
+/* Motion */
+@keyframes dc-spin   { to { transform: rotate(360deg); } }
+@keyframes dc-float  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes dc-blink  { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+@keyframes dc-dash   { to { stroke-dashoffset: -48; } }
+@keyframes dc-pulse-ring {
+  0%   { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.anim-spin       { animation: dc-spin 12s linear infinite; }
+.anim-spin-slow  { animation: dc-spin 24s linear infinite; }
+.anim-float      { animation: dc-float 7s ease-in-out infinite; }
+.anim-blink      { animation: dc-blink 2.4s ease-in-out infinite; }
+.anim-dash       { animation: dc-dash 2.8s linear infinite; }
+.pulse-ring      { transform-origin: center; transform-box: fill-box; animation: dc-pulse-ring 3s cubic-bezier(0.2, 0.6, 0.4, 1) infinite; }
+
+/* Approach-light runway band (CTA strip) */
+.approach-strip { position: relative; overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-spin, .anim-spin-slow, .anim-float, .anim-blink, .anim-dash, .pulse-ring {
+    animation: none;
+  }
+}
