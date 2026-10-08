@@ -1,4 +1,4 @@
-/* Dawns Claw — intake form logic */
+/* Dawns Claw — intake wizard + dossier logic */
 (function () {
   "use strict";
 
@@ -25,8 +25,7 @@
       card.style.boxShadow = active ? "0 0 0 1px #1B4D3E" : "";
     });
     certFields.forEach(function (el) {
-      var roles = el.dataset.cert.split(" ");
-      var show = roles.indexOf(role) !== -1;
+      var show = el.dataset.cert.split(" ").indexOf(role) !== -1;
       el.style.display = show ? "" : "none";
       el.querySelectorAll("input, select").forEach(function (input) {
         input.disabled = !show;
@@ -60,9 +59,81 @@
       sumStatus.style.color = dirty ? "#D4AF37" : "";
     }
   }
-
   form.addEventListener("input", refreshSummary);
   form.addEventListener("change", refreshSummary);
+
+  /* ---------- Step wizard ---------- */
+  var steps = Array.prototype.slice.call(form.querySelectorAll("fieldset"));
+  var leftCol = steps.length ? steps[0].parentElement : null;
+  var cur = 0;
+  var gotoStep = null;
+
+  if (leftCol && steps.length > 1) {
+    // progress rail
+    var rail = document.createElement("div");
+    rail.className = "flex flex-wrap items-center gap-x-5 gap-y-3 mb-8 reveal in-view";
+    rail.id = "wizRail";
+    leftCol.insertBefore(rail, steps[0]);
+
+    var dots = steps.map(function (fs, i) {
+      var legend = fs.querySelector("legend");
+      var label = legend ? legend.textContent.replace(/^SEC\.\s*\d+\s*—\s*/i, "").trim() : "Step " + (i + 1);
+      var item = document.createElement("div");
+      item.className = "flex items-center gap-2.5";
+      item.innerHTML = '<span class="wiz-dot"></span><span class="font-mono text-[0.55rem] tracking-[0.22em] uppercase text-ink/45">' + label + "</span>";
+      rail.appendChild(item);
+      fs.classList.add("wiz-step");
+      return item.querySelector(".wiz-dot");
+    });
+
+    // nav buttons
+    var nav = document.createElement("div");
+    nav.className = "flex flex-wrap items-center gap-4 pt-4";
+    nav.innerHTML =
+      '<button type="button" class="btn-ghost wiz-back"><span>← Back</span></button>' +
+      '<button type="button" class="btn-gold wiz-next"><span>Continue</span><span>→</span></button>';
+    leftCol.appendChild(nav);
+    var backBtn = nav.querySelector(".wiz-back");
+    var nextBtn = nav.querySelector(".wiz-next");
+
+    function validStep(i) {
+      var err = document.getElementById("formError");
+      err.classList.add("hidden");
+      var ok = true;
+      steps[i].querySelectorAll("input[required], select[required]").forEach(function (f) {
+        if (!f.disabled && !f.value.trim()) { ok = false; f.classList.add("!border-rose"); }
+        else f.classList.remove("!border-rose");
+      });
+      if (!ok) {
+        err.textContent = "// Complete required fields before advancing.";
+        err.classList.remove("hidden");
+      }
+      return ok;
+    }
+
+    function setStep(i) {
+      cur = Math.max(0, Math.min(steps.length - 1, i));
+      steps.forEach(function (fs, j) { fs.classList.toggle("active", j === cur); });
+      dots.forEach(function (d, j) {
+        d.classList.toggle("done", j < cur);
+        d.classList.toggle("current", j === cur);
+      });
+      backBtn.style.visibility = cur === 0 ? "hidden" : "visible";
+      nextBtn.querySelector("span").textContent = cur === steps.length - 1 ? "Review & Transmit" : "Continue";
+      if (cur === steps.length - 1) refreshSummary();
+      document.getElementById("intake").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    gotoStep = setStep;
+
+    backBtn.addEventListener("click", function () { setStep(cur - 1); });
+    nextBtn.addEventListener("click", function () {
+      if (!validStep(cur)) return;
+      if (cur < steps.length - 1) setStep(cur + 1);
+      else if (form.requestSubmit) form.requestSubmit();
+    });
+
+    setStep(0);
+  }
 
   /* ---------- Submission ---------- */
   form.addEventListener("submit", function (e) {
@@ -75,13 +146,16 @@
       { el: document.getElementById("phone"), msg: "Phone number required." },
       { el: document.getElementById("email"), msg: "Valid email required." }
     ];
-
     for (var i = 0; i < required.length; i++) {
-      var r = required[i];
-      if (!r.el.value.trim()) {
-        err.textContent = "// " + r.msg;
+      if (!required[i].el.value.trim()) {
+        err.textContent = "// " + required[i].msg;
         err.classList.remove("hidden");
-        r.el.focus();
+        if (gotoStep) {
+          var fs = required[i].el.closest("fieldset");
+          var idx = steps.indexOf(fs);
+          if (idx >= 0) gotoStep(idx);
+        }
+        required[i].el.focus();
         return;
       }
     }
@@ -93,12 +167,10 @@
       return;
     }
 
-    // Generate reference code: DC-ROLE-timestamp fragment
     var frag = Date.now().toString(36).toUpperCase().slice(-6);
     var ref = "DC-" + currentRole.toUpperCase().slice(0, 3) + "-" + frag;
     document.getElementById("refCode").textContent = ref;
 
-    // Persist a local copy for the applicant's records
     try {
       var record = {
         ref: ref,

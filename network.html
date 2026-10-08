@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>try{if(localStorage.getItem('dc-ops')==='1')document.documentElement.classList.add('ops-dark')}catch(e){}</script>
 <title>Network — Dawns Claw | Affiliates &amp; B2B Ventures</title>
 <meta name="description" content="The Dawns Claw affiliate network — FBOs, Part 145 stations, OEMs, and luxury brands in joint B2B cross-marketing ventures across the Charleston aerospace corridor." />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -41,7 +42,7 @@ tailwind.config = {
       <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
       Alliance Channels — Open
     </span>
-    <span class="hidden md:block">Cross-Marketing Directorate</span>
+    <span class="hidden lg:block" data-clock></span>
   </div>
 </div>
 
@@ -67,6 +68,9 @@ tailwind.config = {
       <a href="join.html" class="nav-link">Enlist</a>
     </nav>
     <div class="flex items-center gap-4">
+      <button id="opsToggle" aria-label="Toggle ops mode" aria-pressed="false" class="hidden sm:flex items-center justify-center w-9 h-9 border border-ink/15 hover:border-gold transition-colors">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="#D4AF37" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="#D4AF37" stroke-width="1.5"/></svg>
+      </button>
       <a href="join.html" class="hidden md:inline-flex btn-gold !py-3 !px-5"><span>Open Alliance</span></a>
       <button id="menuBtn" aria-label="Menu" aria-expanded="false" class="lg:hidden flex flex-col gap-1.5 p-2">
         <span class="w-6 h-px bg-ink"></span>
@@ -75,15 +79,26 @@ tailwind.config = {
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="lg:hidden absolute top-full left-0 w-full bg-cream border-b border-ink/10 shadow-2xl">
-    <nav class="px-8 py-8 flex flex-col gap-6">
-      <a href="index.html" class="nav-link text-sm">Command</a>
-      <a href="academy.html" class="nav-link text-sm">Academy</a>
-      <a href="network.html" class="nav-link active text-sm">Network</a>
-      <a href="donate.html" class="nav-link text-sm">Donate</a>
-      <a href="join.html" class="nav-link text-sm">Enlist</a>
-      <a href="join.html" class="btn-gold w-fit mt-2"><span>Open Alliance</span></a>
+  <div id="megaNav" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="absolute inset-0 bg-blueprint-dark"></div>
+    <div class="flex items-center justify-between px-6 sm:px-10 h-[72px] border-b border-cream/10 relative">
+      <span class="spec-label text-gold">Index // Dawns Claw</span>
+      <button id="megaClose" aria-label="Close menu" class="w-10 h-10 border border-cream/20 text-cream/70 hover:text-gold hover:border-gold transition-colors font-mono text-sm">✕</button>
+    </div>
+    <nav class="flex-1 flex flex-col justify-center px-6 sm:px-10 gap-4 sm:gap-5 relative">
+      <div class="mega-item"><a class="mega-link" href="index.html"><span class="mega-num">01</span>Command</a></div>
+      <div class="mega-item"><a class="mega-link" href="academy.html"><span class="mega-num">02</span>Academy</a></div>
+      <div class="mega-item"><a class="mega-link active" href="network.html"><span class="mega-num">03</span>Network</a></div>
+      <div class="mega-item"><a class="mega-link" href="donate.html"><span class="mega-num">04</span>Donate</a></div>
+      <div class="mega-item"><a class="mega-link" href="join.html"><span class="mega-num">05</span>Enlist</a></div>
     </nav>
+    <div class="px-6 sm:px-10 pb-10 relative">
+      <div class="hairline-gold mb-6"></div>
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <span class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-cream/40">KCHS — Charleston, SC</span>
+        <a href="join.html" class="btn-gold"><span>Open Alliance</span><span>→</span></a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -97,7 +112,7 @@ tailwind.config = {
       <div class="lg:col-span-7">
         <div class="reveal flex items-center gap-4 mb-6">
           <span class="w-10 h-px bg-gold"></span>
-          <span class="spec-label text-forest">The Alliance Lattice</span>
+          <span class="spec-label text-forest" data-type="The Alliance Lattice">The Alliance Lattice</span>
         </div>
         <h1 class="reveal font-display font-light text-[clamp(2.6rem,6vw,5rem)] leading-[1.02]" data-delay="1">
           Stronger in<br /><span class="text-forest">formation</span>.
@@ -151,7 +166,7 @@ tailwind.config = {
 <!-- ============ PARTNER CLASSES ============ -->
 <section class="py-16 lg:py-24">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="flex items-end justify-between mb-12 reveal">
+    <div class="flex items-end justify-between mb-12 reveal-wipe">
       <div>
         <div class="spec-label text-gold mb-4">SEC. 01 — Affiliate Classes</div>
         <h2 class="font-display text-4xl sm:text-5xl font-light">Who Flies With Us</h2>
@@ -289,7 +304,7 @@ tailwind.config = {
 <!-- ============ CHARTER TIER ============ -->
 <section class="border-t border-ink/10 bg-white py-20 lg:py-24">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-12 reveal">
+    <div class="text-center mb-12 reveal-wipe">
       <div class="spec-label text-gold mb-4">SEC. 04 — Charter Standing</div>
       <h2 class="font-display text-4xl sm:text-5xl font-light">Partner Standing Tiers</h2>
     </div>
