@@ -1,4 +1,4 @@
-# Dawns Claw — Netlify configuration
+# Dawns Talon — Netlify configuration
 # Plain static site: no build step, serve the repo root (index.html is the default document).
 
 [build]

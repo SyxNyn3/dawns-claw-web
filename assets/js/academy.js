@@ -1,4 +1,4 @@
-/* Dawns Claw — Academy direction engine */
+/* Dawns Talon — Academy direction engine */
 (function () {
   "use strict";
 
@@ -6,7 +6,7 @@
     p107: {
       title: "Part 107 Remote Pilot",
       code: "FAA 14 CFR §107",
-      desc: "The commercial UAS credential — the fastest legal runway into paid drone operations. Required for every inspection sortie, survey contract, and aerial data mission Dawns Claw flies.",
+      desc: "The commercial UAS credential — the fastest legal runway into paid drone operations. Required for every inspection sortie, survey contract, and aerial data mission Dawns Talon flies.",
       time: "4–8 weeks",
       cost: "$175 – $600",
       exam: "Unmanned Aircraft General (UAG)",
@@ -16,7 +16,7 @@
         "Schedule the UAG knowledge test at an FAA-approved testing center — 60 questions, 70% to pass, $175 fee.",
         "Complete the IACRA application and pass TSA security screening for certificate issuance.",
         "Register each aircraft over 0.55 lb through the FAA DroneZone portal.",
-        "Log supervised sorties — then apply to the Dawns Claw inspection division roster."
+        "Log supervised sorties — then apply to the Dawns Talon inspection division roster."
       ],
       note: "Recurrency: the Part 107 online recurrent training must be completed every 24 calendar months to keep commercial privileges current."
     },
@@ -40,7 +40,7 @@
     ia: {
       title: "Inspection Authorization",
       code: "FAA 14 CFR §65.91–.95",
-      desc: "The IA is the apex mechanic credential — authority to approve aircraft for return to service after annual inspections and major repairs. In the Dawns Claw network, IAs are the signatories of command.",
+      desc: "The IA is the apex mechanic credential — authority to approve aircraft for return to service after annual inspections and major repairs. In the Dawns Talon network, IAs are the signatories of command.",
       time: "+3 years post-A&P",
       cost: "$0 – $1.5k",
       exam: "FSDO Interview + Record Review",
@@ -52,7 +52,7 @@
         "Exercise the privilege: annual inspections, major repair/alteration approvals, and progressive inspection programs.",
         "Renew annually each March — activity, training, or refresher requirements must be documented to retain the authorization."
       ],
-      note: "IA holders in the Dawns Claw network carry independent sign-off authority and command the highest contracted rates on the roster."
+      note: "IA holders in the Dawns Talon network carry independent sign-off authority and command the highest contracted rates on the roster."
     },
     avionics: {
       title: "Avionics & GROL",
@@ -82,7 +82,7 @@
         "Ground yourself in FAA regulatory structure: Parts 43, 91, 135, and 145 — the legal terrain every operation crosses.",
         "Earn project-management fundamentals (CAPM or equivalent) — aerospace runs on documented process, not memory.",
         "Study maintenance records law: logbook entries, AD compliance tracking, and airworthiness documentation chains.",
-        "Complete supervised rotations in dispatch coordination and vendor management within the Dawns Claw network.",
+        "Complete supervised rotations in dispatch coordination and vendor management within the Dawns Talon network.",
         "Build a compliance portfolio — demonstrate you can run an audit-ready operation end to end.",
         "Advance to asset command officer: managing aircraft, contractors, and client relationships under one authority."
       ],

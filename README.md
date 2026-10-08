@@ -1,4 +1,4 @@
-# Dawns Claw — Aerospace Command
+# Dawns Talon — Aerospace Command
 
 Premium aviation concierge management, autonomous systems, and aerospace consultancy — Charleston, South Carolina (KCHS corridor, adjacent to Boeing South Carolina).
 

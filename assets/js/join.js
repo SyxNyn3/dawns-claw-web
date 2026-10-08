@@ -1,4 +1,4 @@
-/* Dawns Claw — intake wizard + dossier logic */
+/* Dawns Talon — intake wizard + dossier logic */
 (function () {
   "use strict";
 
@@ -168,7 +168,7 @@
     }
 
     var frag = Date.now().toString(36).toUpperCase().slice(-6);
-    var ref = "DC-" + currentRole.toUpperCase().slice(0, 3) + "-" + frag;
+    var ref = "DT-" + currentRole.toUpperCase().slice(0, 3) + "-" + frag;
     document.getElementById("refCode").textContent = ref;
 
     try {

@@ -1,5 +1,5 @@
 /* ============================================================
-   DAWNS CLAW — interaction engine
+   DAWNS TALON — interaction engine
    Modules: reveal, mega-nav, custom cursor, page wipes,
    ops-mode toggle, live clock, typewriter, parallax,
    magnetic hover, canvas contours
