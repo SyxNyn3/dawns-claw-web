@@ -6,6 +6,19 @@
 <script>try{if(localStorage.getItem('dc-ops')==='1')document.documentElement.classList.add('ops-dark')}catch(e){}</script>
 <title>Academy — Dawns Talon | Aerospace License Direction Engine</title>
 <meta name="description" content="Chart your aerospace career: FAA Part 107, A&P, IA, avionics, and management pathways mapped step by step." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dawns Talon" />
+<meta property="og:title" content="Academy — Dawns Talon | Aerospace License Direction Engine" />
+<meta property="og:description" content="Chart your aerospace career: FAA Part 107, A&P, IA, avionics, and management pathways mapped step by step." />
+<meta property="og:url" content="https://dawns-talon.netlify.app/academy.html" />
+<meta property="og:image" content="https://dawns-talon.netlify.app/assets/img/prop-crew.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Academy — Dawns Talon" />
+<meta name="twitter:description" content="Aerospace license direction engine — every credential mapped." />
+<meta name="twitter:image" content="https://dawns-talon.netlify.app/assets/img/prop-crew.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0A0A0A" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -250,6 +263,54 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ============ TRACK RECOMMENDER ============ -->
+<section id="recommender" class="border-t border-ink/10 bg-white py-16 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint opacity-40"></div>
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 relative">
+    <div class="text-center mb-12 reveal-wipe">
+      <div class="spec-label text-gold mb-4">ORIENTATION // Track Recommender</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-light">Not sure which vector is yours?</h2>
+      <p class="mt-4 text-ink/55 font-light max-w-lg mx-auto">Three questions. The engine files the flight plan.</p>
+    </div>
+
+    <div class="space-y-10">
+      <div class="reveal" data-rec-group="pull">
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mb-4">Q1 // What pulls you toward the hangar?</p>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <button type="button" class="rec-tile" data-points="ap:2,ia:1"><span class="opt-code">A</span>Hands on the airframe — wrenches, rivets, real hardware</button>
+          <button type="button" class="rec-tile" data-points="p107:2,avionics:1"><span class="opt-code">B</span>Drones, data, and autonomous systems</button>
+          <button type="button" class="rec-tile" data-points="avionics:2,ap:1"><span class="opt-code">C</span>Electronics, wiring, and cockpit systems</button>
+          <button type="button" class="rec-tile" data-points="mgmt:2,ia:1"><span class="opt-code">D</span>Running the operation — people, programs, paperwork</button>
+        </div>
+      </div>
+      <div class="reveal" data-rec-group="pace" data-delay="1">
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mb-4">Q2 // How fast do you need wheels up?</p>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <button type="button" class="rec-tile" data-points="p107:2,avionics:1"><span class="opt-code">A</span>Weeks — earning soonest matters</button>
+          <button type="button" class="rec-tile" data-points="avionics:1,mgmt:1"><span class="opt-code">B</span>Months — a solid season of training</button>
+          <button type="button" class="rec-tile" data-points="ap:2,ia:1"><span class="opt-code">C</span>Years — I'm building a career, not a side gig</button>
+        </div>
+      </div>
+      <div class="reveal" data-rec-group="goal" data-delay="2">
+        <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-ink/45 mb-4">Q3 // Where do you want your authority to live?</p>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <button type="button" class="rec-tile" data-points="p107:2"><span class="opt-code">A</span>In the air — piloting commercial missions</button>
+          <button type="button" class="rec-tile" data-points="ia:2,ap:1"><span class="opt-code">B</span>On the signature — approving return to service</button>
+          <button type="button" class="rec-tile" data-points="avionics:2"><span class="opt-code">C</span>In the wire — diagnostics nobody else can solve</button>
+          <button type="button" class="rec-tile" data-points="mgmt:2"><span class="opt-code">D</span>In the command seat — directing the whole mission</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="recResult" class="hidden mt-10 hud-frame border border-gold/40 bg-gold/[0.06] p-7 text-center">
+      <p class="font-mono text-[0.6rem] tracking-[0.3em] uppercase text-ink/50">// Engine Recommendation</p>
+      <p class="mt-3 font-display text-3xl font-light">Filed route: <span class="text-forest font-medium" data-rec-name></span></p>
+      <p class="mt-2 text-xs text-ink/50 font-light">Loaded into the direction engine above — the full credential sequence is on your scope.</p>
+      <button type="button" id="recReset" class="mt-5 font-mono text-[0.58rem] tracking-[0.25em] uppercase text-ink/45 hover:text-gold transition-colors underline underline-offset-4">Recompute — reset answers</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PRINCIPLES ============ -->
 <section class="bg-forest text-cream py-20 lg:py-24 relative overflow-hidden">
   <div class="absolute inset-0 bg-blueprint-dark"></div>
@@ -358,7 +419,7 @@ tailwind.config = {
       <div class="spec-label text-gold mb-5">Operations Desk</div>
       <ul class="space-y-3 text-xs">
         <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
-        <li class="font-mono tracking-wider">ops@dawnstalon.aero</li>
+        <li><a href="mailto:ops@dawnstalon.aero" data-copy="ops@dawnstalon.aero" class="font-mono tracking-wider hover:text-gold transition-colors" title="Click to copy">ops@dawnstalon.aero</a></li>
         <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
       </ul>
     </div>

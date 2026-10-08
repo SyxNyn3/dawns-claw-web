@@ -6,6 +6,19 @@
 <script>try{if(localStorage.getItem('dc-ops')==='1')document.documentElement.classList.add('ops-dark')}catch(e){}</script>
 <title>Enlist — Dawns Talon | Join the Elite Network</title>
 <meta name="description" content="Apply to the Dawns Talon roster — FAA A&P/IA mechanics, Part 107 drone pilots, apprentices, and infrastructure partners." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dawns Talon" />
+<meta property="og:title" content="Enlist — Dawns Talon | Join the Elite Network" />
+<meta property="og:description" content="Apply to the Dawns Talon roster — FAA A&P/IA mechanics, Part 107 drone pilots, apprentices, and infrastructure partners." />
+<meta property="og:url" content="https://dawns-talon.netlify.app/join.html" />
+<meta property="og:image" content="https://dawns-talon.netlify.app/assets/img/drone-ops.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Enlist — Dawns Talon" />
+<meta name="twitter:description" content="Apply to the Dawns Talon roster — credentialed professionals only." />
+<meta name="twitter:image" content="https://dawns-talon.netlify.app/assets/img/drone-ops.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0A0A0A" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -213,7 +226,10 @@ tailwind.config = {
 <!-- ============ INTAKE FORM ============ -->
 <section id="intake" class="pb-20 lg:pb-28">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
-    <form id="intakeForm" class="grid lg:grid-cols-12 gap-8" novalidate>
+    <form id="intakeForm" name="dossier" method="POST" class="grid lg:grid-cols-12 gap-8" data-netlify="true" netlify-honeypot="ops-check" novalidate>
+      <input type="hidden" name="form-name" value="dossier" />
+      <input type="hidden" name="role" id="roleField" value="mechanic" />
+      <p class="hidden" aria-hidden="true"><label>Leave blank <input name="ops-check" /></label></p>
 
       <!-- LEFT: form -->
       <div class="lg:col-span-8 space-y-10">
@@ -441,7 +457,7 @@ tailwind.config = {
       <div class="spec-label text-gold mb-5">Operations Desk</div>
       <ul class="space-y-3 text-xs">
         <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
-        <li class="font-mono tracking-wider">ops@dawnstalon.aero</li>
+        <li><a href="mailto:ops@dawnstalon.aero" data-copy="ops@dawnstalon.aero" class="font-mono tracking-wider hover:text-gold transition-colors" title="Click to copy">ops@dawnstalon.aero</a></li>
         <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
       </ul>
     </div>

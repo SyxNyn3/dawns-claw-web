@@ -6,6 +6,33 @@
 <script>try{if(localStorage.getItem('dc-ops')==='1')document.documentElement.classList.add('ops-dark')}catch(e){}</script>
 <title>Dawns Talon — Elite Aviation Management | Charleston, SC</title>
 <meta name="description" content="Dawns Talon is Charleston's premier white-glove aviation concierge, A&P/IA labor network, and autonomous aerospace consultancy — operating adjacent to Boeing and CHS International." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dawns Talon" />
+<meta property="og:title" content="Dawns Talon — Elite Aviation Management | Charleston, SC" />
+<meta property="og:description" content="White-glove aviation concierge, A&P/IA labor network, and autonomous aerospace consultancy operating adjacent to Boeing and CHS International." />
+<meta property="og:url" content="https://dawns-talon.netlify.app/" />
+<meta property="og:image" content="https://dawns-talon.netlify.app/assets/img/hangar-jet.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dawns Talon — Elite Aviation Management" />
+<meta name="twitter:description" content="White-glove aviation concierge and aerospace command — Charleston, SC." />
+<meta name="twitter:image" content="https://dawns-talon.netlify.app/assets/img/hangar-jet.jpg" />
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#0A0A0A" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Dawns Talon",
+  "description": "White-glove aviation concierge management, A&P/IA technician network, autonomous inspection services, and aerospace workforce development.",
+  "url": "https://dawns-talon.netlify.app/",
+  "email": "ops@dawnstalon.aero",
+  "areaServed": { "@type": "City", "name": "Charleston", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+  "geo": { "@type": "GeoCoordinates", "latitude": 32.8986, "longitude": -80.0405 },
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
+  "sameAs": ["https://github.com/SyxNyn3/dawns-talon-web"]
+}
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -105,7 +132,7 @@ tailwind.config = {
 
 <!-- ============ HERO ============ -->
 <section class="relative overflow-hidden bg-ink text-cream">
-  <div class="absolute inset-0"><img src="assets/img/hangar-jet.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover" /></div>
+  <div class="absolute inset-0 overflow-hidden"><img src="assets/img/hangar-jet.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover kenburns" /></div>
   <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30"></div>
   <div class="absolute inset-0 bg-blueprint-dark opacity-50"></div>
   <div class="absolute inset-0 bg-noise"></div>
@@ -220,6 +247,28 @@ tailwind.config = {
     </span>
   </div>
 </div>
+
+<!-- ============ COMMAND METRICS ============ -->
+<section class="bg-ink text-cream border-b border-gold/20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 lg:py-16 grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="reveal text-center lg:text-left">
+      <div><span class="stat-num" data-count="24" data-suffix="/7">0/7</span></div>
+      <div class="font-mono text-[0.58rem] tracking-[0.28em] uppercase text-cream/45 mt-3">Dispatch Coverage</div>
+    </div>
+    <div class="reveal text-center lg:text-left" data-delay="1">
+      <div><span class="stat-num" data-count="4" data-prefix="&lt;" data-suffix=" HR">&lt;0 HR</span></div>
+      <div class="font-mono text-[0.58rem] tracking-[0.28em] uppercase text-cream/45 mt-3">AOG Response Window</div>
+    </div>
+    <div class="reveal text-center lg:text-left" data-delay="2">
+      <div><span class="stat-num" data-count="5">0</span></div>
+      <div class="font-mono text-[0.58rem] tracking-[0.28em] uppercase text-cream/45 mt-3">Credential Tracks Mapped</div>
+    </div>
+    <div class="reveal text-center lg:text-left" data-delay="3">
+      <div><span class="stat-num" data-count="365">0</span></div>
+      <div class="font-mono text-[0.58rem] tracking-[0.28em] uppercase text-cream/45 mt-3">Days Operational</div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ POSITIONING ============ -->
 <section class="py-20 lg:py-28">
@@ -368,6 +417,62 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ============ SCOPE ESTIMATOR ============ -->
+<section class="bg-ink text-cream py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint-dark"></div>
+  <div class="absolute inset-0 bg-noise"></div>
+  <div class="glow glow-gold w-[420px] h-[420px] -bottom-32 -left-32 opacity-50"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="flex items-end justify-between mb-12 reveal-wipe">
+      <div>
+        <div class="spec-label text-gold mb-4">TOOLS // Mission Planner</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light">Estimate your scope.</h2>
+      </div>
+      <span class="hidden md:block font-mono text-[0.6rem] tracking-[0.25em] text-cream/40 uppercase">Interactive</span>
+    </div>
+
+    <div id="estimator" class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-7 space-y-9">
+        <div class="reveal" data-est-group="class">
+          <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-cream/45 mb-4">01 // Aircraft Class</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <button type="button" class="opt-tile" data-mult="1"><span class="opt-code">GA</span>Light / Piston</button>
+            <button type="button" class="opt-tile" data-mult="1.9"><span class="opt-code">MD</span>Mid-Size / Turbine</button>
+            <button type="button" class="opt-tile" data-mult="3.2"><span class="opt-code">HV</span>Large Cabin / Fleet</button>
+          </div>
+        </div>
+        <div class="reveal" data-est-group="tier" data-delay="1">
+          <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-cream/45 mb-4">02 // Service Tier</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <button type="button" class="opt-tile" data-mult="1" data-cell="ENVOY" data-win="48 HR"><span class="opt-code">E1</span>Envoy — Retained</button>
+            <button type="button" class="opt-tile" data-mult="1.8" data-cell="COMMAND" data-win="24 HR"><span class="opt-code">C2</span>Command — Managed</button>
+            <button type="button" class="opt-tile" data-mult="2.6" data-cell="SOVEREIGN" data-win="4 HR"><span class="opt-code">S3</span>Sovereign — Fleet</button>
+          </div>
+        </div>
+        <div class="reveal" data-est-group="util" data-delay="2">
+          <p class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-cream/45 mb-4">03 // Flight Profile</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <button type="button" class="opt-tile" data-mult="0.9"><span class="opt-code">L</span>Occasional — &lt;150 HR/YR</button>
+            <button type="button" class="opt-tile" data-mult="1"><span class="opt-code">M</span>Regular — 150–400 HR/YR</button>
+            <button type="button" class="opt-tile" data-mult="1.25"><span class="opt-code">H</span>High Utilization — 400+ HR/YR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 reveal" data-delay="2">
+        <div id="estResult" class="hud-frame border border-cream/15 bg-cream/[0.03] backdrop-blur p-8 lg:sticky lg:top-28">
+          <div class="spec-label text-gold mb-7">// Projected Envelope</div>
+          <div id="estRange" class="est-glow font-display text-3xl sm:text-4xl font-light text-cream leading-tight">Awaiting parameters…</div>
+          <div id="estCell" class="mt-4 font-mono text-[0.6rem] tracking-[0.28em] uppercase text-gold">Select all three parameters</div>
+          <div class="hairline-gold my-7"></div>
+          <p class="text-xs text-cream/45 leading-relaxed font-light">Indicative management scope only. Final engagement terms are set during the concierge briefing and reflect aircraft condition, basing, and program history.</p>
+          <a href="join.html" class="btn-gold mt-8 justify-center w-full"><span>Lock In a Briefing</span><span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ MEMBERSHIP ============ -->
 <section class="py-20 lg:py-28">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -418,6 +523,46 @@ tailwind.config = {
         </ul>
         <a href="join.html" class="btn-ghost mt-8 justify-center"><span>Open a Channel</span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGNAL REPORTS ============ -->
+<section class="border-t border-ink/10 bg-white py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blueprint opacity-40"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="flex items-end justify-between mb-14 reveal-wipe">
+      <div>
+        <div class="spec-label text-gold mb-4">INTELL // Signal Reports</div>
+        <h2 class="font-display text-4xl sm:text-5xl font-light">Transmissions from the field.</h2>
+      </div>
+      <span class="hidden md:block font-mono text-[0.6rem] tracking-[0.25em] text-ink/40 uppercase">Charter Roster</span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <figure class="dc-card p-8 reveal">
+        <span class="quote-mark">"</span>
+        <blockquote class="font-display text-xl font-light leading-relaxed text-ink/80">They treated a weekend AOG like a mission, not an invoice. Dispatch had a certified pair of hands on our wing before the FBO even opened its lounge.</blockquote>
+        <figcaption class="mt-7 pt-5 border-t border-ink/10">
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-ink/50">Charter Member — 011</div>
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-gold mt-1">Corporate Flight Dept. Director</div>
+        </figcaption>
+      </figure>
+      <figure class="dc-card p-8 reveal" data-delay="1">
+        <span class="quote-mark">"</span>
+        <blockquote class="font-display text-xl font-light leading-relaxed text-ink/80">The drone inspection report read like an engineering audit. My insurer asked who produced it before they asked what it cost.</blockquote>
+        <figcaption class="mt-7 pt-5 border-t border-ink/10">
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-ink/50">Charter Member — 007</div>
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-gold mt-1">Private Aircraft Owner</div>
+        </figcaption>
+      </figure>
+      <figure class="dc-card p-8 reveal" data-delay="2">
+        <span class="quote-mark">"</span>
+        <blockquote class="font-display text-xl font-light leading-relaxed text-ink/80">Our hangar sat dark four days a week. Dawns Talon turned that idle square footage into the busiest certified cell on the field.</blockquote>
+        <figcaption class="mt-7 pt-5 border-t border-ink/10">
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-ink/50">Network Partner — FBO</div>
+          <div class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-gold mt-1">Charleston Executive Aviation</div>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -510,6 +655,53 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal-wipe">
+      <div class="spec-label text-gold mb-4">BRIEF // Frequencies Asked</div>
+      <h2 class="font-display text-4xl sm:text-5xl font-light">Cleared for questions.</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="font-display text-xl sm:text-2xl font-light">What separates Dawns Talon from a repair shop?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="text-sm text-ink/60 leading-relaxed font-light">We are a management command, not a bay with wrenches. Dawns Talon orchestrates certified A&amp;P/IA labor, detailing, hangar logistics, and autonomous inspection as a single accountable program — you get one briefing, one ledger, and one standard, regardless of which facility physically touches the aircraft.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="font-display text-xl sm:text-2xl font-light">How quickly can you respond to an AOG event?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="text-sm text-ink/60 leading-relaxed font-light">Dispatch windows scale with tier: Envoy members are coordinated within 48 hours, Command within 24, and Sovereign fleets hold a 4-hour response doctrine inside the Charleston corridor. Remote AOG outside the corridor is coordinated through the affiliate network.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="font-display text-xl sm:text-2xl font-light">Do you only operate around Charleston?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="text-sm text-ink/60 leading-relaxed font-light">KCHS is home station — adjacent to Boeing South Carolina and Joint Base Charleston — but the distributed model travels. Infrastructure partners across the Lowcountry and Southeast extend coverage, and autonomous inspection sorties deploy wherever the asset sits.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="font-display text-xl sm:text-2xl font-light">How are the technicians in your network vetted?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="text-sm text-ink/60 leading-relaxed font-light">Every roster mechanic holds current FAA A&amp;P certification — Inspection Authorization for sign-off work — arrives with personal tooling, and carries individual liability coverage. Intake dossiers are reviewed by a human operations officer, never a scoring algorithm.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false">
+          <span class="font-display text-xl sm:text-2xl font-light">How do I engage — and what does the briefing cost?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><p class="text-sm text-ink/60 leading-relaxed font-light">Open a channel through the Enlist portal or the operations desk email. Briefings are discreet, obligation-free, and answered within one business day. Engagement terms are set only after we understand your aircraft, your calendar, and your standard.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section class="bg-ink text-cream py-20 lg:py-24 relative overflow-hidden approach-strip">
   <div class="absolute inset-0 bg-blueprint-dark"></div>
@@ -573,7 +765,7 @@ tailwind.config = {
       <div class="spec-label text-gold mb-5">Operations Desk</div>
       <ul class="space-y-3 text-xs">
         <li class="font-mono tracking-wider">KCHS — Charleston, SC</li>
-        <li class="font-mono tracking-wider">ops@dawnstalon.aero</li>
+        <li><a href="mailto:ops@dawnstalon.aero" data-copy="ops@dawnstalon.aero" class="font-mono tracking-wider hover:text-gold transition-colors" title="Click to copy">ops@dawnstalon.aero</a></li>
         <li class="font-mono tracking-wider">24 / 7 / 365 Dispatch</li>
       </ul>
     </div>

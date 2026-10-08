@@ -579,3 +579,115 @@ body {
     animation: none;
   }
 }
+
+/* ============================================================
+   EXPANSION — progress rail, ken burns, stats, testimonials,
+   FAQ, scope estimator, academy recommender, copy feedback
+   ============================================================ */
+
+/* Scroll progress rail */
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--forest), var(--gold));
+  z-index: 90; pointer-events: none;
+}
+
+/* Ken Burns drift on hero imagery */
+.kenburns { animation: kenburns 32s ease-in-out infinite alternate; will-change: transform; }
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.14) translate(-1.5%, 1.5%); }
+}
+
+/* Animated stat counters */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 300; line-height: 1;
+  color: var(--gold);
+}
+.stat-suffix { font-family: var(--font-display); font-size: clamp(1.2rem, 2vw, 1.75rem); color: rgba(253, 251, 247, 0.4); }
+
+/* Testimonials */
+.quote-mark {
+  display: block; font-family: var(--font-display);
+  font-size: 5rem; line-height: 0.55; color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+/* FAQ accordion */
+.faq-item { border-bottom: 1px solid rgba(10, 10, 10, 0.12); }
+.faq-q {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding: 1.5rem 0; text-align: left; cursor: pointer;
+  background: none; border: 0; font: inherit; color: inherit;
+}
+.faq-icon {
+  flex-shrink: 0; width: 2rem; height: 2rem;
+  border: 1px solid rgba(10, 10, 10, 0.22);
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s, color 0.3s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+.faq-item.open .faq-a { max-height: 22rem; }
+.faq-a-inner { padding-bottom: 1.5rem; }
+
+/* Scope estimator + academy recommender option tiles */
+.opt-tile {
+  cursor: pointer; width: 100%; text-align: left;
+  border: 1px solid rgba(253, 251, 247, 0.16);
+  padding: 1.1rem 1.25rem; background: transparent; color: inherit; font: inherit;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+.opt-tile:hover { border-color: var(--gold); transform: translateX(4px); }
+.opt-tile.sel  { border-color: var(--gold); background: rgba(212, 175, 55, 0.09); }
+.opt-tile.sel .opt-code { background: var(--gold); color: var(--ink); }
+.opt-code {
+  display: inline-grid; place-items: center; min-width: 1.9rem; height: 1.9rem;
+  border: 1px solid rgba(253, 251, 247, 0.25); font-family: var(--font-mono);
+  font-size: 0.6rem; letter-spacing: 0.1em; margin-right: 0.85rem;
+  transition: all 0.3s;
+}
+.rec-tile {
+  cursor: pointer; width: 100%; text-align: left;
+  border: 1px solid rgba(10, 10, 10, 0.15);
+  padding: 1.15rem 1.35rem; background: transparent; color: inherit; font: inherit;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+.rec-tile:hover { border-color: var(--gold); transform: translateX(4px); }
+.rec-tile.sel  { border-color: var(--gold); background: rgba(212, 175, 55, 0.09); }
+.rec-tile.sel .opt-code { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.rec-tile .opt-code { border-color: rgba(10, 10, 10, 0.25); }
+
+/* Estimator result activation */
+#estResult { opacity: 0.3; transition: opacity 0.6s ease; }
+#estResult.is-live { opacity: 1; }
+#estResult.is-live .est-glow { animation: est-flash 0.9s ease-out; }
+@keyframes est-flash { from { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45); } to { box-shadow: 0 0 0 26px rgba(212, 175, 55, 0); } }
+
+/* Click-to-copy feedback */
+[data-copy] { position: relative; }
+[data-copy].copied::after {
+  content: "COPIED"; position: absolute; left: calc(100% + 0.6rem); top: 50%;
+  transform: translateY(-50%); font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.25em; color: var(--gold); white-space: nowrap;
+  animation: dc-blink 0.6s ease-in-out 2;
+}
+
+/* Ops-mode variants for expansion components */
+.ops-dark .faq-item { border-color: rgba(253, 251, 247, 0.14); }
+.ops-dark .faq-icon { border-color: rgba(253, 251, 247, 0.3); }
+.ops-dark .rec-tile { border-color: rgba(253, 251, 247, 0.18); }
+.ops-dark .rec-tile:hover { border-color: var(--gold); }
+.ops-dark .rec-tile .opt-code { border-color: rgba(253, 251, 247, 0.3); }
+
+@media print {
+  #scrollProgress { display: none !important; }
+  .kenburns { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns { animation: none; }
+}

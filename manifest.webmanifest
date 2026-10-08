@@ -1,0 +1,17 @@
+{
+  "name": "Dawns Talon — Aerospace Command",
+  "short_name": "Dawns Talon",
+  "description": "Charleston's white-glove aviation concierge, A&P/IA labor network, and autonomous aerospace consultancy.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -145,4 +145,52 @@
   });
 
   render("p107");
+
+  /* ---------- Track recommender ---------- */
+  var rec = document.getElementById("recommender");
+  if (rec) {
+    var scores, answered;
+    var resetState = function () {
+      scores = { p107: 0, ap: 0, ia: 0, avionics: 0, mgmt: 0 };
+      answered = 0;
+      rec.querySelectorAll("[data-rec-group]").forEach(function (g) { g.classList.remove("locked"); });
+      rec.querySelectorAll(".rec-tile").forEach(function (t) { t.classList.remove("sel"); });
+      var out = document.getElementById("recResult");
+      if (out) out.classList.add("hidden");
+    };
+    var finish = function () {
+      var best = null, bestV = -1;
+      Object.keys(scores).forEach(function (k) {
+        if (scores[k] > bestV) { bestV = scores[k]; best = k; }
+      });
+      if (!best || !TRACKS[best]) return;
+      render(best);
+      var out = document.getElementById("recResult");
+      if (out) {
+        out.querySelector("[data-rec-name]").textContent = TRACKS[best].title;
+        out.classList.remove("hidden");
+        setTimeout(function () {
+          var panel = document.getElementById("trackPanel");
+          if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 1400);
+      }
+    };
+    resetState();
+    rec.querySelectorAll("[data-rec-group]").forEach(function (group) {
+      group.querySelectorAll(".rec-tile").forEach(function (tile) {
+        tile.addEventListener("click", function () {
+          if (group.classList.contains("locked")) return;
+          group.classList.add("locked");
+          tile.classList.add("sel");
+          (tile.getAttribute("data-points") || "").split(",").forEach(function (pair) {
+            var kv = pair.split(":");
+            if (kv[0] in scores) scores[kv[0]] += parseInt(kv[1], 10) || 0;
+          });
+          if (++answered >= 3) finish();
+        });
+      });
+    });
+    var resetBtn = document.getElementById("recReset");
+    if (resetBtn) resetBtn.addEventListener("click", resetState);
+  }
 })();

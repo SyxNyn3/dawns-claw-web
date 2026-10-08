@@ -231,4 +231,108 @@
       raf = requestAnimationFrame(draw);
     }
   });
+
+  /* ---------- Scroll progress rail ---------- */
+  var rail = document.createElement("div");
+  rail.id = "scrollProgress";
+  document.body.appendChild(rail);
+  var railTick = false;
+  var railSet = function () {
+    railTick = false;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    rail.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+  };
+  window.addEventListener("scroll", function () {
+    if (!railTick) { railTick = true; requestAnimationFrame(railSet); }
+  }, { passive: true });
+  railSet();
+
+  /* ---------- Animated stat counters ---------- */
+  var counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    var runCount = function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var prefix = el.getAttribute("data-prefix") || "";
+      var suffix = el.getAttribute("data-suffix") || "";
+      var t0 = null, dur = 1400;
+      if (reduceMotion) { el.textContent = prefix + target + suffix; return; }
+      var stepFn = function (ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(stepFn);
+      };
+      requestAnimationFrame(stepFn);
+    };
+    if ("IntersectionObserver" in window) {
+      var nio = new IntersectionObserver(function (ents) {
+        ents.forEach(function (e) {
+          if (e.isIntersecting) { runCount(e.target); nio.unobserve(e.target); }
+        });
+      }, { threshold: 0.6 });
+      counters.forEach(function (el) { nio.observe(el); });
+    } else {
+      counters.forEach(runCount);
+    }
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq-q").forEach(function (q) {
+    q.addEventListener("click", function () {
+      var item = q.closest(".faq-item");
+      var open = item.classList.toggle("open");
+      q.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  /* ---------- Click-to-copy ---------- */
+  document.querySelectorAll("[data-copy]").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      var val = el.getAttribute("data-copy") || el.textContent;
+      var mark = function () {
+        el.classList.add("copied");
+        setTimeout(function () { el.classList.remove("copied"); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(val).then(mark, mark);
+      } else {
+        mark();
+      }
+    });
+  });
+
+  /* ---------- Scope estimator ---------- */
+  var est = document.getElementById("estimator");
+  if (est) {
+    var pick = { class: 0, tier: 0, util: 0 };
+    var tierMeta = { cell: "", win: "" };
+    var BASE = 2800;
+    var fmt = function (n) { return "$" + (Math.round(n / 100) * 100).toLocaleString("en-US"); };
+    var update = function () {
+      var out = document.getElementById("estResult");
+      if (!(pick.class && pick.tier && pick.util)) return;
+      var mid = BASE * pick.class * pick.tier * pick.util;
+      document.getElementById("estRange").textContent = fmt(mid * 0.85) + " – " + fmt(mid * 1.15) + " / MO";
+      document.getElementById("estCell").textContent = tierMeta.cell + " CELL · " + tierMeta.win + " DISPATCH WINDOW";
+      out.classList.add("is-live");
+    };
+    est.querySelectorAll("[data-est-group]").forEach(function (group) {
+      var key = group.getAttribute("data-est-group");
+      group.querySelectorAll(".opt-tile").forEach(function (tile) {
+        tile.addEventListener("click", function () {
+          group.querySelectorAll(".opt-tile").forEach(function (t) { t.classList.remove("sel"); });
+          tile.classList.add("sel");
+          pick[key] = parseFloat(tile.getAttribute("data-mult")) || 0;
+          if (key === "tier") {
+            tierMeta.cell = tile.getAttribute("data-cell") || "";
+            tierMeta.win = tile.getAttribute("data-win") || "";
+          }
+          update();
+        });
+      });
+    });
+  }
 })();

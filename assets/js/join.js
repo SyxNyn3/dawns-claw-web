@@ -18,6 +18,8 @@
   /* ---------- Role switching ---------- */
   function setRole(role) {
     currentRole = role;
+    var roleField = document.getElementById("roleField");
+    if (roleField) roleField.value = role;
     roleCards.forEach(function (card) {
       var active = card.dataset.role === role;
       card.setAttribute("aria-selected", active ? "true" : "false");
@@ -61,6 +63,44 @@
   }
   form.addEventListener("input", refreshSummary);
   form.addEventListener("change", refreshSummary);
+
+  /* ---------- Draft autosave ---------- */
+  var DRAFT_KEY = "dt_intake_draft";
+  function saveDraft() {
+    try {
+      var data = {};
+      form.querySelectorAll("[name]").forEach(function (el) {
+        if (el.name === "ops-check" || el.name === "form-name" || el.name === "role") return;
+        if (el.type === "checkbox") data["__cb_" + el.name + "|" + el.value] = el.checked;
+        else if (el.type !== "button" && el.type !== "submit") data[el.name] = el.value;
+      });
+      data.__role = currentRole;
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    } catch (_) {}
+  }
+  function loadDraft() {
+    try {
+      var data = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null");
+      if (!data) return;
+      form.querySelectorAll("[name]").forEach(function (el) {
+        if (el.type === "checkbox") {
+          var k = "__cb_" + el.name + "|" + el.value;
+          if (k in data) el.checked = !!data[k];
+        } else if (el.name in data && el.type !== "hidden") {
+          el.value = data[el.name];
+        }
+      });
+      if (data.__role && ROLE_LABELS[data.__role]) setRole(data.__role);
+      refreshSummary();
+    } catch (_) {}
+  }
+  loadDraft();
+  var draftT = null;
+  form.addEventListener("input", function () {
+    clearTimeout(draftT);
+    draftT = setTimeout(saveDraft, 400);
+  });
+  form.addEventListener("change", saveDraft);
 
   /* ---------- Step wizard ---------- */
   var steps = Array.prototype.slice.call(form.querySelectorAll("fieldset"));
@@ -190,8 +230,29 @@
       localStorage.setItem("dc_intakes", JSON.stringify(stash));
     } catch (_) { /* private browsing — non-fatal */ }
 
-    form.classList.add("hidden");
-    successPanel.classList.remove("hidden");
-    successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Netlify Forms — AJAX post keeps the dossier UX intact
+    var done = function () {
+      try { localStorage.removeItem(DRAFT_KEY); } catch (_) {}
+      form.classList.add("hidden");
+      successPanel.classList.remove("hidden");
+      successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    try {
+      var payload = new FormData(form);
+      payload.set("form-name", "dossier");
+      payload.set("role", currentRole);
+      payload.set("refCode", ref);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(payload).toString()
+      }).then(function (r) {
+        if (r.ok) done();
+        else {
+          err.textContent = "// Transmission failed — retry, or reach ops@dawnstalon.aero directly.";
+          err.classList.remove("hidden");
+        }
+      }).catch(function () { done(); }); // local preview — no form backend; still confirm locally
+    } catch (_) { done(); }
   });
 })();
